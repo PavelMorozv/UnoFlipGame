@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyGameManager">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQEIAiAQCAAAAAAQGgABAAAkECAEgABAAAgBAACAAI=</HashCode>
+      <FileName>Assets\Scripts\MyGameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardDesign">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAEBAAAKAAAAAAAABAAAAQEAgAAAACAAABAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CardDesign.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cardMovement" />
+      <Field Name="gameManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CardMovement" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAiEAAAAAAABAMCBCAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CardMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ColorsrPart">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ColorsrPart.EnterColor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\ColorsrPart.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAgAAgAAAAAAACAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ColorsrPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DropDeck" BaseTypeListCollapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAQCAAAUAAAAAAAAAAAAAAIAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DropDeck.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ItemPart" BaseTypeListCollapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ItemPart.EnterColor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\ItemPart.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAgAIAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ItemPart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

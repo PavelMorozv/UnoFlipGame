@@ -1,417 +1,218 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1687078411848049, "dur":26018, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078411874072, "dur":208, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078411874342, "dur":329, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078411874697, "dur":6300, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078411881002, "dur":547390, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078412428394, "dur":510, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078412429180, "dur":6663, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1687078411874860, "dur":6151, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411881014, "dur":1967, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411883392, "dur":305, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/GameCore-FeaturesChecked.txt_1w7g.info" }}
-,{ "pid":12345, "tid":1, "ts":1687078411883810, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ScreenCaptureModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411883944, "dur":560, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411884638, "dur":189, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411884896, "dur":369, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Unity.Cecil.Mdb.dll" }}
-,{ "pid":12345, "tid":1, "ts":1687078411884830, "dur":448, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885279, "dur":116, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885447, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885523, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885618, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.JSONSerializeModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885713, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885801, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Numerics.Vectors-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885892, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Net.Http-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411885986, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.IO.Compression-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886076, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.IO.Compression.FileSystem-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886153, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.EnterpriseServices-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886246, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Data-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886322, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Data.DataSetExtensions-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886411, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886501, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886578, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Threading.Tasks.Extensions-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886674, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Memory-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886756, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Buffers-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886835, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411886925, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ContentLoadModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887023, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ClothModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887117, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887204, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887298, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.DSPGraphModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887351, "dur":169, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887618, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TerrainPhysicsModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887734, "dur":91, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887871, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411887981, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888159, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAssetBundleModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888258, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888313, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888399, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityCurlModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888643, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestTextureModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888730, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.WindModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888823, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411888920, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889010, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889085, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TLSModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889166, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.StreamingModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889247, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ARModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889330, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SubstanceModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":1, "ts":1687078411889790, "dur":772, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info" }}
-,{ "pid":12345, "tid":1, "ts":1687078411890581, "dur":340, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/build.gradle_e9io.info" }}
-,{ "pid":12345, "tid":1, "ts":1687078411891120, "dur":7486, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so" }}
-,{ "pid":12345, "tid":1, "ts":1687078411898657, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ActionGenerateProjectFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/build.gradle (+7 others)" }}
-,{ "pid":12345, "tid":1, "ts":1687078411900261, "dur":305913, "ph":"X", "name": "ActionGenerateProjectFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/build.gradle (+7 others)" }}
-,{ "pid":12345, "tid":1, "ts":1687078412206326, "dur":222074, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411874959, "dur":6080, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411881041, "dur":343, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411881384, "dur":1622, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883060, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883209, "dur":76, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.UnityConnectModule-FeaturesChecked.txt_ck2r.info" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883311, "dur":85, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.ContentLoadModule-FeaturesChecked.txt_23ys.info" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883807, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883944, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1687078411884000, "dur":90, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":2, "ts":1687078411883999, "dur":153, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":2, "ts":1687078411884696, "dur":350695, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":2, "ts":1687078412235730, "dur":192678, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1687078411874886, "dur":6132, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1687078411881023, "dur":547, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1687078411881570, "dur":1425, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1687078411883089, "dur":135, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1687078411883306, "dur":77, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.ClothModule-FeaturesChecked.txt_t4wd.info" }}
-,{ "pid":12345, "tid":3, "ts":1687078411883503, "dur":1275, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/Network-FeaturesChecked.txt_wvpx.info" }}
-,{ "pid":12345, "tid":3, "ts":1687078411884782, "dur":136, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\Network.dll" }}
-,{ "pid":12345, "tid":3, "ts":1687078411884781, "dur":276, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Network-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":3, "ts":1687078411885398, "dur":353800, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/Network-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":3, "ts":1687078412239438, "dur":188964, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411874922, "dur":6104, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411881029, "dur":313, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411881342, "dur":1643, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411883065, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411883300, "dur":68, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.CoreModule-FeaturesChecked.txt_uimb.info" }}
-,{ "pid":12345, "tid":4, "ts":1687078411883496, "dur":929, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/System.Runtime.CompilerServices.Unsafe-FeaturesChecked.txt_it0y.info" }}
-,{ "pid":12345, "tid":4, "ts":1687078411884429, "dur":107, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\System.Runtime.CompilerServices.Unsafe.dll" }}
-,{ "pid":12345, "tid":4, "ts":1687078411884428, "dur":180, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Runtime.CompilerServices.Unsafe-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":4, "ts":1687078412208673, "dur":67, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1687078411892726, "dur":316033, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/System.Runtime.CompilerServices.Unsafe-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":4, "ts":1687078412209080, "dur":219325, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411874950, "dur":6082, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411881036, "dur":326, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411881362, "dur":1622, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411883006, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411883082, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1687078411883209, "dur":84, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt_2b9e.info" }}
-,{ "pid":12345, "tid":5, "ts":1687078411883583, "dur":6315, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/UnityEngine.UI-FeaturesChecked.txt_v0bu.info" }}
-,{ "pid":12345, "tid":5, "ts":1687078411889905, "dur":362, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":5, "ts":1687078411889902, "dur":440, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078411890723, "dur":369529, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078412260571, "dur":57, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\Features\\Assembly-CSharp-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078412260662, "dur":60, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\Features\\UnityEngine.UI-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078412260851, "dur":61, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\Features\\Network-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078412260913, "dur":50, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\Features\\System.Text.Encodings.Web-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":5, "ts":1687078412260487, "dur":583, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Generate Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)" }}
-,{ "pid":12345, "tid":5, "ts":1687078412261635, "dur":166642, "ph":"X", "name": "Generate",  "args": { "detail":"Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)" }}
-,{ "pid":12345, "tid":6, "ts":1687078411874982, "dur":6064, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411881048, "dur":325, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411881374, "dur":1609, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411883024, "dur":129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411883408, "dur":386, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/Assembly-CSharp-FeaturesChecked.txt_ki5r.info" }}
-,{ "pid":12345, "tid":6, "ts":1687078411883820, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411883944, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884061, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ProfilerModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884150, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.PerformanceReportingModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884305, "dur":172, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Unity.IL2CPP.Api.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884257, "dur":226, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884484, "dur":192, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884804, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884903, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411884983, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411885104, "dur":126, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411885235, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Transactions-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411885288, "dur":107, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411885468, "dur":586, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886067, "dur":65, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\MonoBleedingEdge\\lib\\mono\\unityjit-linux\\System.Drawing.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886064, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Drawing-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886208, "dur":154, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886377, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.ComponentModel.Composition-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886441, "dur":124, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886570, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886672, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/netstandard-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886799, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.GameCenterModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886903, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411886996, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887107, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887200, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.CrashReportingModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887309, "dur":175, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Bee.Toolchain.VisualStudio.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887292, "dur":244, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887537, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887620, "dur":55, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Bee.DotNet.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887607, "dur":111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887719, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887778, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityConnectModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887886, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411887965, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UmbraModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888126, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888276, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VehiclesModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888326, "dur":302, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888632, "dur":115, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888748, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888804, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888912, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Runtime.Serialization-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411888975, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411889031, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SpriteMaskModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411889119, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411889209, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411889296, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":6, "ts":1687078411889409, "dur":1810, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/unity_app_guid_jjdo.info" }}
-,{ "pid":12345, "tid":6, "ts":1687078411891266, "dur":45385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so" }}
-,{ "pid":12345, "tid":6, "ts":1687078411936672, "dur":98, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.mdpi.app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411936670, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411936840, "dur":529, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411937456, "dur":907, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values/freeformwindow.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411939207, "dur":148, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411938428, "dur":960, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values-v30/freeformwindow.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411939434, "dur":165, "ph":"X", "name": "WriteText",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/values/strings.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411939638, "dur":1925, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values/styles.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411942633, "dur":65, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411941639, "dur":1073, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values-v28/styles.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411942974, "dur":973, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values-v21/styles.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411944060, "dur":522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/res/values/ids.xml" }}
-,{ "pid":12345, "tid":6, "ts":1687078411944686, "dur":1428, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/libs/unity-classes.jar" }}
-,{ "pid":12345, "tid":6, "ts":1687078411952494, "dur":144, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411946227, "dur":6429, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources" }}
-,{ "pid":12345, "tid":6, "ts":1687078411954161, "dur":107, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411952811, "dur":1483, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java" }}
-,{ "pid":12345, "tid":6, "ts":1687078411954385, "dur":209, "ph":"X", "name": "WriteText",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/resources/META-INF/com.android.games.engine.build_fingerprint" }}
-,{ "pid":12345, "tid":6, "ts":1687078411954595, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmono-native.so" }}
-,{ "pid":12345, "tid":6, "ts":1687078411954665, "dur":4003, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmono-native.so" }}
-,{ "pid":12345, "tid":6, "ts":1687078411961275, "dur":69, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411958792, "dur":2572, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libMonoPosixHelper.so" }}
-,{ "pid":12345, "tid":6, "ts":1687078411961433, "dur":30643, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmonobdwgc-2.0.so" }}
-,{ "pid":12345, "tid":6, "ts":1687078411992097, "dur":92, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xxxhdpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411992096, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411992233, "dur":933, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993186, "dur":93, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xxhdpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993184, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993319, "dur":497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993829, "dur":81, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xhdpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993828, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411993962, "dur":594, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411994569, "dur":86, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.hdpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411994568, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411994692, "dur":558, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411995269, "dur":130, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.mdpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411995268, "dur":132, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411995422, "dur":566, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411996003, "dur":85, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.ldpi.app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411996002, "dur":91, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411996100, "dur":65, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997000, "dur":51, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411996197, "dur":868, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon_round.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997110, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xxxhdpi.app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997109, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997703, "dur":68, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997229, "dur":556, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997810, "dur":167, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xxhdpi.app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411997809, "dur":169, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411998027, "dur":608, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411998658, "dur":102, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.xhdpi.app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411998657, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411998768, "dur":72, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411999294, "dur":71, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078411998847, "dur":529, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411999398, "dur":304, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.hdpi.app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411999398, "dur":304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078411999720, "dur":483, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon.png" }}
-,{ "pid":12345, "tid":6, "ts":1687078412000265, "dur":3532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412005798, "dur":91, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412003857, "dur":2079, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412008550, "dur":11243, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412005988, "dur":13825, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412019918, "dur":1038, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412020998, "dur":477, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412021513, "dur":888, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412022472, "dur":999, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412025154, "dur":95, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412023504, "dur":1763, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412025315, "dur":727, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412026108, "dur":678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Numerics.Vectors.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412026842, "dur":644, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412027546, "dur":1216, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412028807, "dur":591, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412029430, "dur":1121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412030678, "dur":972, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412031771, "dur":83, "ph":"X", "name": "EmitNodeStart",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412031863, "dur":1844, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412034359, "dur":69, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412033774, "dur":665, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412035537, "dur":104, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412034484, "dur":1183, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412036471, "dur":85, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1687078412035725, "dur":847, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412036630, "dur":844, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412037537, "dur":927, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412038519, "dur":632, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412039184, "dur":679, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Threading.Tasks.Extensions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412039903, "dur":766, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Memory.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412040725, "dur":782, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Buffers.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412041541, "dur":646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/GameCore.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412042215, "dur":586, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Text.Encodings.Web.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412042830, "dur":497, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Network.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412043368, "dur":830, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Text.Json.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412044231, "dur":540, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/System.Runtime.CompilerServices.Unsafe.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412044811, "dur":494, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412045341, "dur":676, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412046049, "dur":472, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Unity.AI.Navigation.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412046572, "dur":459, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412047063, "dur":618, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412047719, "dur":702, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412048453, "dur":532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412049023, "dur":571, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412049635, "dur":516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412050186, "dur":487, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412050706, "dur":537, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412051288, "dur":546, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412051874, "dur":501, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412052408, "dur":470, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412052913, "dur":488, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412053438, "dur":561, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412054040, "dur":521, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412054600, "dur":467, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412055101, "dur":492, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412055626, "dur":5445, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412061100, "dur":3707, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\boot.config" }}
-,{ "pid":12345, "tid":6, "ts":1687078412064873, "dur":80, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\Variations\\mono\\Managed\\UnityEngine.PropertiesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1687078412061093, "dur":4105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"GuidGenerator D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid" }}
-,{ "pid":12345, "tid":6, "ts":1687078412065476, "dur":115363, "ph":"X", "name": "GuidGenerator",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid" }}
-,{ "pid":12345, "tid":6, "ts":1687078412181887, "dur":246500, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411875031, "dur":6020, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411881053, "dur":330, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411881383, "dur":1617, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411883064, "dur":133, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411883243, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1687078411883437, "dur":586, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/Unity.AI.Navigation-FeaturesChecked.txt_7p4o.info" }}
-,{ "pid":12345, "tid":7, "ts":1687078411884027, "dur":94, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\Unity.AI.Navigation.dll" }}
-,{ "pid":12345, "tid":7, "ts":1687078411884251, "dur":61, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Unity.Linker.Api.dll" }}
-,{ "pid":12345, "tid":7, "ts":1687078411884026, "dur":288, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Unity.AI.Navigation-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":7, "ts":1687078411884762, "dur":346922, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/Unity.AI.Navigation-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":7, "ts":1687078412231962, "dur":196435, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411875072, "dur":5984, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411881060, "dur":342, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411881403, "dur":1649, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411883056, "dur":85, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411883283, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1687078411883473, "dur":721, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/Microsoft.Bcl.AsyncInterfaces-FeaturesChecked.txt_lnbm.info" }}
-,{ "pid":12345, "tid":8, "ts":1687078411884198, "dur":117, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\Microsoft.Bcl.AsyncInterfaces.dll" }}
-,{ "pid":12345, "tid":8, "ts":1687078411884197, "dur":186, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Microsoft.Bcl.AsyncInterfaces-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":8, "ts":1687078411885002, "dur":339708, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/Microsoft.Bcl.AsyncInterfaces-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":8, "ts":1687078412224977, "dur":203418, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411875112, "dur":5951, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411881065, "dur":266, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411881331, "dur":1718, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411883056, "dur":151, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411883207, "dur":57, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.SpriteShapeModule-FeaturesChecked.txt_zrrh.info" }}
-,{ "pid":12345, "tid":9, "ts":1687078411883315, "dur":111, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.AnimationModule-FeaturesChecked.txt_3sdh.info" }}
-,{ "pid":12345, "tid":9, "ts":1687078411890720, "dur":170, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1687078411884017, "dur":6882, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/boot.config_x4e9.info" }}
-,{ "pid":12345, "tid":9, "ts":1687078411890903, "dur":84, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Android\\Data\\boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078411890990, "dur":1048, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Android\\Data\\RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":9, "ts":1687078411892039, "dur":68, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Android\\Data\\ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":9, "ts":1687078411892315, "dur":66, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\Player1b0ec3f5-inputdata.json" }}
-,{ "pid":12345, "tid":9, "ts":1687078411890901, "dur":1547, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/Android/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078411893001, "dur":162010, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/Android/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078412056450, "dur":8355, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\Android\\boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078412056449, "dur":8358, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078412064838, "dur":740, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1687078412065601, "dur":590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412066254, "dur":506, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412066793, "dur":557, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412067387, "dur":1247, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412068672, "dur":878, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412069606, "dur":549, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412070195, "dur":691, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412070926, "dur":556, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412071533, "dur":536, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412072104, "dur":637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412072794, "dur":553, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412073411, "dur":517, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412073963, "dur":516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412074538, "dur":536, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412075132, "dur":694, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412075919, "dur":508, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412076462, "dur":514, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412077014, "dur":537, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412077610, "dur":651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412078316, "dur":670, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.PropertiesModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412079029, "dur":678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412079742, "dur":601, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412080374, "dur":534, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412080940, "dur":620, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412081617, "dur":641, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412082346, "dur":651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412083043, "dur":654, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412083741, "dur":637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412084418, "dur":535, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412084995, "dur":521, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412085552, "dur":669, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412086265, "dur":505, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412086852, "dur":451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412087333, "dur":499, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412087870, "dur":464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412088364, "dur":492, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412088900, "dur":496, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412089429, "dur":532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412090029, "dur":1070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412091139, "dur":516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ContentLoadModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412091687, "dur":500, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412092227, "dur":521, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412092779, "dur":525, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412093339, "dur":647, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412094026, "dur":597, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412094657, "dur":482, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412095181, "dur":522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412095739, "dur":529, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1687078412096288, "dur":97, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\res.ldpi.app_icon.png" }}
-,{ "pid":12345, "tid":9, "ts":1687078412096287, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon.png" }}
-,{ "pid":12345, "tid":9, "ts":1687078412096405, "dur":484, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon.png" }}
-,{ "pid":12345, "tid":9, "ts":1687078412096942, "dur":526, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":9, "ts":1687078412097504, "dur":511, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":9, "ts":1687078412098038, "dur":1345, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d" }}
-,{ "pid":12345, "tid":9, "ts":1687078412099398, "dur":328996, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1687078411875144, "dur":5923, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1687078411881068, "dur":1934, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1687078411883022, "dur":186, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1687078411883209, "dur":181, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.AIModule-FeaturesChecked.txt_jr17.info" }}
-,{ "pid":12345, "tid":10, "ts":1687078411883556, "dur":1580, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/System.Text.Encodings.Web-FeaturesChecked.txt_iol0.info" }}
-,{ "pid":12345, "tid":10, "ts":1687078411885140, "dur":134, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\System.Text.Encodings.Web.dll" }}
-,{ "pid":12345, "tid":10, "ts":1687078411885138, "dur":196, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Text.Encodings.Web-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":10, "ts":1687078412196931, "dur":90, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1687078411885675, "dur":311368, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/System.Text.Encodings.Web-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":10, "ts":1687078412197369, "dur":231017, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1687078411875174, "dur":5899, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1687078411881073, "dur":1916, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1687078411883033, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1687078411883279, "dur":95, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.TilemapModule-FeaturesChecked.txt_xct4.info" }}
-,{ "pid":12345, "tid":11, "ts":1687078411883487, "dur":785, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/System.Text.Json-FeaturesChecked.txt_uovx.info" }}
-,{ "pid":12345, "tid":11, "ts":1687078411884277, "dur":546, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\System.Text.Json.dll" }}
-,{ "pid":12345, "tid":11, "ts":1687078411884884, "dur":209, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\Tools\\BuildPipeline\\Unity.Linker.Api.dll" }}
-,{ "pid":12345, "tid":11, "ts":1687078411884275, "dur":820, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Text.Json-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":11, "ts":1687078411886285, "dur":310056, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/System.Text.Json-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":11, "ts":1687078412196665, "dur":231724, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411875199, "dur":5879, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411881079, "dur":1932, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411883076, "dur":143, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411883314, "dur":96, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/UnityEngine.AudioModule-FeaturesChecked.txt_tbfa.info" }}
-,{ "pid":12345, "tid":12, "ts":1687078411883747, "dur":166, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411883918, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411883983, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884040, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.PropertiesModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884131, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884217, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.LocalizationModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884301, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ImageConversionModule-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884450, "dur":200, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884656, "dur":281, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Assets\\Plugins\\GameCore.dll" }}
-,{ "pid":12345, "tid":12, "ts":1687078411884655, "dur":341, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"ExtractUsedFeatures Library/Bee/artifacts/Android/Features/GameCore-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078411885293, "dur":351189, "ph":"X", "name": "ExtractUsedFeatures",  "args": { "detail":"Library/Bee/artifacts/Android/Features/GameCore-FeaturesChecked.txt" }}
-,{ "pid":12345, "tid":12, "ts":1687078412236712, "dur":191691, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1687078412437762, "dur":1336, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1687098930896488, "dur":19349, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098930915845, "dur":240, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098930916121, "dur":369, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098930916512, "dur":2851, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098930919364, "dur":117938, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098931037303, "dur":252, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098931037754, "dur":7584, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1687098930916594, "dur":2776, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1687098930919371, "dur":1624, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1687098930921465, "dur":437, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/boot.config_tyr4.info" }}
+,{ "pid":12345, "tid":1, "ts":1687098930921907, "dur":78, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1687098930921990, "dur":465, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":1, "ts":1687098930922456, "dur":75, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\PlayerDataCache\\Win64\\Data\\ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":1, "ts":1687098930922738, "dur":121, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1687098930922860, "dur":77, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":1, "ts":1687098930922938, "dur":215, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\GitHub\\UnoFlipGame\\UnityClientUnoFlip\\Library\\Bee\\PlayerScriptAssemblies\\UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1687098930923236, "dur":89, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\Playerca36074f-inputdata.json" }}
+,{ "pid":12345, "tid":1, "ts":1687098930921905, "dur":1567, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1687098930923779, "dur":101, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1687098930924108, "dur":111199, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1687098931036386, "dur":89, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1687098931036385, "dur":91, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1687098931036491, "dur":772, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/boot.config" }}
+,{ "pid":12345, "tid":2, "ts":1687098930916857, "dur":2561, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930919420, "dur":172, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930919592, "dur":1419, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930921011, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1687098930921095, "dur":1583, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930922726, "dur":1081, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930923814, "dur":3383, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930927208, "dur":505, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930927723, "dur":954, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930928684, "dur":1926, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930930624, "dur":165, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930930799, "dur":508, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930931316, "dur":144, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930931471, "dur":549, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930932030, "dur":121, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930932171, "dur":985, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933169, "dur":251, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933431, "dur":177, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933622, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933748, "dur":103, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933859, "dur":105, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930933972, "dur":528, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930934510, "dur":602, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930935129, "dur":708, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930935850, "dur":1264, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930937121, "dur":2776, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930939905, "dur":3669, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1687098930943583, "dur":93715, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930916619, "dur":2753, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930919377, "dur":346, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930919723, "dur":1285, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930921050, "dur":2572, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930923676, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930923763, "dur":3496, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930927270, "dur":853, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930930574, "dur":5752, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/Network.dll" }}
+,{ "pid":12345, "tid":3, "ts":1687098930936344, "dur":1510, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930937861, "dur":1108, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930938975, "dur":1544, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930940527, "dur":3040, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1687098930943593, "dur":2672, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":3, "ts":1687098930946289, "dur":91031, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930916647, "dur":2734, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930919384, "dur":339, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930919723, "dur":1299, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930921069, "dur":1625, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930922748, "dur":1146, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930923903, "dur":4674, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930928613, "dur":7015, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":4, "ts":1687098930935648, "dur":536, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930936201, "dur":1192, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930937405, "dur":1267, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930938680, "dur":1546, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1687098930940329, "dur":7173, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1687098930947525, "dur":89781, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930916677, "dur":2710, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930919389, "dur":363, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930919753, "dur":1270, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930921024, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":5, "ts":1687098930921084, "dur":1911, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930923035, "dur":791, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930923840, "dur":3860, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930927710, "dur":820, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930928619, "dur":7036, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/Unity.AI.Navigation.dll" }}
+,{ "pid":12345, "tid":5, "ts":1687098930935755, "dur":146, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930935909, "dur":1431, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930937351, "dur":1222, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930938580, "dur":1539, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930940127, "dur":1739, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1687098930941884, "dur":5727, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1687098930947625, "dur":89674, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930916718, "dur":2675, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930919396, "dur":385, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930919781, "dur":1225, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930921007, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1687098930921146, "dur":1857, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930923055, "dur":805, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930923866, "dur":2930, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930926805, "dur":461, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930927271, "dur":853, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930928585, "dur":7179, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/System.Text.Encodings.Web.dll" }}
+,{ "pid":12345, "tid":6, "ts":1687098930935783, "dur":869, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930936662, "dur":1417, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930938087, "dur":1603, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930939698, "dur":1961, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1687098930941702, "dur":3612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/resources.assets" }}
+,{ "pid":12345, "tid":6, "ts":1687098930945331, "dur":91982, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930916750, "dur":2650, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930919403, "dur":352, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930919755, "dur":1241, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930921049, "dur":485, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930921584, "dur":2081, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930923677, "dur":4852, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930928588, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll" }}
+,{ "pid":12345, "tid":7, "ts":1687098930928675, "dur":7180, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll" }}
+,{ "pid":12345, "tid":7, "ts":1687098930935875, "dur":1262, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930937143, "dur":2861, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930940012, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930940090, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930940147, "dur":1751, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1687098930941918, "dur":3769, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":7, "ts":1687098930945706, "dur":91609, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930916784, "dur":2622, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930919409, "dur":355, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930919764, "dur":1273, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930921037, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":8, "ts":1687098930921092, "dur":1918, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930923062, "dur":582, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930923651, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":8, "ts":1687098930923704, "dur":534, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930924245, "dur":2165, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930926424, "dur":771, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930927204, "dur":498, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930927712, "dur":808, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930930661, "dur":5047, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll" }}
+,{ "pid":12345, "tid":8, "ts":1687098930935725, "dur":614, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930936346, "dur":1420, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930937781, "dur":275, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930938068, "dur":1404, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930939481, "dur":1609, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1687098930941161, "dur":4376, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":8, "ts":1687098930945564, "dur":91744, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930916820, "dur":2592, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930919415, "dur":361, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930919776, "dur":1228, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930921047, "dur":561, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930921646, "dur":1978, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930923641, "dur":447, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\WindowsPlayer.exe" }}
+,{ "pid":12345, "tid":9, "ts":1687098930923630, "dur":459, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip.exe" }}
+,{ "pid":12345, "tid":9, "ts":1687098930924134, "dur":2280, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930926433, "dur":806, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930927246, "dur":876, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930928617, "dur":7800, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/GameCore.dll" }}
+,{ "pid":12345, "tid":9, "ts":1687098930936439, "dur":1503, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930937949, "dur":1428, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930939386, "dur":1520, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930940915, "dur":2660, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1687098930943586, "dur":93710, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930916895, "dur":2528, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930919423, "dur":1578, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930921007, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":10, "ts":1687098930921073, "dur":1129, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930922248, "dur":1405, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930923672, "dur":2741, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930926424, "dur":777, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930927210, "dur":902, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930928123, "dur":455, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930928613, "dur":7671, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":10, "ts":1687098930936301, "dur":1326, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930937634, "dur":1132, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930938773, "dur":1557, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1687098930940353, "dur":5301, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":10, "ts":1687098930945670, "dur":91620, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930916928, "dur":2498, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930919427, "dur":1573, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930921026, "dur":122, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":11, "ts":1687098930921006, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":11, "ts":1687098930921150, "dur":1110, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930922268, "dur":382, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
+,{ "pid":12345, "tid":11, "ts":1687098930922266, "dur":385, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":11, "ts":1687098930922652, "dur":1272, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930923945, "dur":4197, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930928675, "dur":8010, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/Managed/System.Text.Json.dll" }}
+,{ "pid":12345, "tid":11, "ts":1687098930936711, "dur":2869, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930939590, "dur":1925, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1687098930941542, "dur":18335, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":11, "ts":1687098930959895, "dur":77406, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930916954, "dur":2477, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930919432, "dur":1566, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930921027, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"D:\\Program Files\\Unity\\Hub\\Editor\\2022.3.0f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":12, "ts":1687098930921008, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":12, "ts":1687098930921168, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/PavelMorozov-PC/Desktop/ /  /MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":12, "ts":1687098930921242, "dur":2577, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930923827, "dur":5580, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930929417, "dur":1203, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930930634, "dur":190, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930930832, "dur":523, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930931362, "dur":102, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930931474, "dur":558, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930932040, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930932161, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930932234, "dur":934, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930933178, "dur":718, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930933931, "dur":389, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930934332, "dur":669, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930935069, "dur":764, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930935842, "dur":1001, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930936854, "dur":2939, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930939802, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930939879, "dur":1825, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1687098930941720, "dur":3436, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/PavelMorozov-PC/Desktop/ /  /UnoFlip_Data/level0" }}
+,{ "pid":12345, "tid":12, "ts":1687098930945174, "dur":92120, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1687098931047877, "dur":754, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

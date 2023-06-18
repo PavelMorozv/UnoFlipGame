@@ -68,7 +68,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                                 .Add(Property.Method, "giveCard");
             gameManager.client.Send(packet);
 
-            
+            Debug.Log(packet);
+
+
             ////var gamePaket = new GamePacket()
             ////{
             ////    Type = GamePacketTypes.Player_GiveCard,

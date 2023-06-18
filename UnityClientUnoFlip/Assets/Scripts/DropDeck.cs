@@ -65,6 +65,7 @@ public class DropDeck : MonoBehaviour, IDropHandler
                             .Add(Property.Data, card);
         gm.client.Send(packet);
 
+        Debug.Log(packet);
 
 
         //var gamePaket = new GamePacket()

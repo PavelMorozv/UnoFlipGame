@@ -58,7 +58,7 @@ namespace Network.ServerModules
                                 .Add(Property.Method, packet.Get<string>(Property.Method))
                                 .Add(Property.Data, true));
 
-                            Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} создал комнату: {room.Name}");
+                            Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} создал комнату: {room.Id}:{room.Name}");
                             break;
                         }
 
@@ -66,7 +66,7 @@ namespace Network.ServerModules
                         {
                             if (rooms.Any((x) => x.Id == packet.Get<int>(Property.Data)))
                             {
-                                room = rooms.Where((x) => x.Id == packet.Get<int>(Property.Data)).First();
+                                room = rooms.Where((x) => x.Id == packet.Get<int>(Property.Data)).FirstOrDefault();
                                 if (room.Clients.Count != 2)
                                 {
                                     room.Clients.Add(client);
@@ -79,7 +79,7 @@ namespace Network.ServerModules
                                     Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} присоеденился к комнате: {room.Name}");
                                     if (room.Clients.Count == 2)
                                     {
-                                        room.GameId = gamesModule.GetNewGameID(room.Id, room.Clients);
+                                        room.GameId = gamesModule.GetIdNewGame(room.Id, room.Clients);
                                     }
                                     break;
                                 }
@@ -98,7 +98,7 @@ namespace Network.ServerModules
                             int i = -1;
                             if (rooms.Any((x) => { if (x.Clients.Contains(client)) { i = x.Id; return true; } else { return false; }; }))
                             {
-                                room = rooms.First((x) => x.Id == i);
+                                room = rooms.FirstOrDefault((x) => x.Id == i);
                                 room.Clients.Remove(client);
                                 client.Send(new Packet()
                                     .Add(Property.Type, PacketType.Response)
@@ -152,7 +152,7 @@ namespace Network.ServerModules
                             int i = -1;
                             if (rooms.Any((x) => { if (x.Clients.Contains(client)) { i = x.Id; return true; } else { return false; }; }))
                             {
-                                room = rooms.First((x) => x.Id == i);
+                                room = rooms.FirstOrDefault((x) => x.Id == i);
                                 var newPacket = new Packet()
                                         .Add(Property.Type, PacketType.Response)
                                         .Add(Property.TargetModule, Name)
@@ -194,7 +194,7 @@ namespace Network.ServerModules
         public Client GetClientsById(int roomId, int playerId)
         {
             //findClient = rooms.SelectMany((r) => r.Clients).ToList().First((c) => c.ConnectedID == id);
-            return rooms.First(r => r.Id == roomId).Clients.First(c => c.ConnectedID == playerId);
+            return rooms.FirstOrDefault(r => r.Id == roomId).Clients.FirstOrDefault(c => c.ConnectedID == playerId);
         }
 
         public void Shutdown()

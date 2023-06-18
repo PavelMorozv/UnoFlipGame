@@ -73,7 +73,6 @@ public class MyGameManager : MonoBehaviour
 
     void ReciveProcess(Packet packet)
     {
-
         var obj = GameObject.Find("MainMenu");
         Debug.Log(packet);
         PlayerState ps;
@@ -176,7 +175,7 @@ public class MyGameManager : MonoBehaviour
         //foreach (var card in enemy.Cards)
         //{
         //    AddCard(deckEnemy, card);
-        //}
+         //}
     }
 
     public void DrawDropOrMain()

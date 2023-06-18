@@ -36,9 +36,9 @@ namespace GameCore.Classes
 
         public void Start()
         {
-            _currentPlayer = new Random().Next(0, _players.Count + 1);
+            _currentPlayer = new Random().Next(0, _players.Count);
 
-            foreach (Player player in _players) HandOutCard(player, 1);
+            foreach (Player player in _players) HandOutCard(player, 3);
 
             _gameStatus = GameStatus.InProcess;
         }

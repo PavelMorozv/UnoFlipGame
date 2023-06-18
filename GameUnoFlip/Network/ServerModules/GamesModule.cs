@@ -33,6 +33,8 @@ namespace Network.ServerModules
             Console.WriteLine($"[{Name}] Инициализация завершена");
         }
 
+
+
         private void NetworkModule_OnClientReciveMessage(Client client, Packet packet)
         {
             if (packet.Get<string>(Property.TargetModule) != Name) return;
@@ -41,14 +43,17 @@ namespace Network.ServerModules
             int pId = -1;
             if (players.Any((p) => { if (p.Id == client.ConnectedID) { pId = p.Id; return true; } else return false; }))
             {
-                var p = players.First((p) => p.Id == client.ConnectedID);
+                var p = players.FirstOrDefault((p) => p.Id == client.ConnectedID);
+
+                if (p.Game.Id == 1) 
+                    Console.WriteLine(packet);
 
                 switch (packet.Get<string>(Property.Method))
                 {
                     case "move":
                         {
                             var tempCard = packet.Get<Card>(Property.Data);
-                            p = players.First((p) => p.Id == client.ConnectedID);
+                            p = players.FirstOrDefault((p) => p.Id == client.ConnectedID);
 
                             if (p.Game.Move(p.Id, tempCard))
                             {
@@ -101,10 +106,10 @@ namespace Network.ServerModules
 
         public Game GetGame(int id)
         {
-            return games.First(g => g.Id == id);
+            return games.FirstOrDefault(g => g.Id == id);
         }
 
-        public int GetNewGameID(int id, List<Client> clients)
+        public int GetIdNewGame(int id, List<Client> clients)
         {
             Game game = new Game(id);
 
@@ -141,7 +146,7 @@ namespace Network.ServerModules
                         .Add(Property.Method, "GameInit")
                         .Add(Property.Data, p.Game.GetState());
 
-                clients.First(c => c.ConnectedID == p.Id).Send(pkg);
+                clients.FirstOrDefault(c => c.ConnectedID == p.Id).Send(pkg);
             }
 
             game.Start();

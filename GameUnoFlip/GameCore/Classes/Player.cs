@@ -67,7 +67,7 @@ namespace GameCore.Classes
         {
             return new PlayerState()
             {
-                Id = Game.GetPlayerId(this),
+                Id = Id,
                 IsUno = IsUno,
                 Cards = Cards,
                 IsGive = IsGive,

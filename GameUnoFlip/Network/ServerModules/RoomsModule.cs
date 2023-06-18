@@ -28,11 +28,7 @@ namespace Network.ServerModules
             gamesModule = ModuleManager.GetModule<GamesModule>();
             lock (lockRoom)
             {
-                rooms = new List<Room>()
-                {
-                    new Room("TestRoom1"),
-                    new Room("TestRoom2")
-                };
+                rooms = new List<Room>();
             }
 
             Console.WriteLine($"[{Name}] Инициализация завершена");
@@ -88,7 +84,6 @@ namespace Network.ServerModules
                                     break;
                                 }
                             }
-
 
                             client.Send(new Packet()
                                 .Add(Property.Type, PacketType.Response)
@@ -194,7 +189,6 @@ namespace Network.ServerModules
                         break;
                 }
             }
-
         }
 
         public Client GetClientsById(int roomId, int playerId)
@@ -237,7 +231,6 @@ namespace Network.ServerModules
         public List<Client>? Clients { get; private set; }
         public int? GameId { get; set; }
 
-
         public Room(string name, Client owner = null)
         {
             Id = RoomsCount++;
@@ -245,7 +238,6 @@ namespace Network.ServerModules
             Owner = owner;
             Clients = new List<Client>();
         }
-
 
         public override string ToString()
         {

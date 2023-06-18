@@ -8,11 +8,7 @@ namespace ConsoleServer
         static void Main(string[] args)
         {
             var server = new Server();
-            server.Start();
-
-
-
-            
+            server.Start();            
         }
     }
 }

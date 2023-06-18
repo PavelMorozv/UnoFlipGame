@@ -83,7 +83,7 @@ namespace Network.ServerModules
                             .Add(Property.Data, player.Game.GetState());
 
                     if (players.Contains(player))
-                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);     
                 }
             }
 
@@ -107,11 +107,10 @@ namespace Network.ServerModules
         public int GetNewGameID(int id, List<Client> clients)
         {
             Game game = new Game(id);
-            Player player;
 
             foreach (var client in clients)
             {
-                player = new Player(client.ConnectedID, game);
+                var player = new Player(client.ConnectedID, game);
                 player.OnAddCard += Player_OnAddCard;
 
                 player.OnAddRangeCard += Player_OnAddRangeCard;

@@ -1,5 +1,6 @@
 ﻿using GameCore.Enums;
 using GameCore.Structs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Action = GameCore.Enums.Action;
@@ -35,7 +36,7 @@ namespace GameCore.Classes
 
         public void Start()
         {
-            _currentPlayer = 0;
+            _currentPlayer = new Random().Next(0, _players.Count + 1);
 
             foreach (Player player in _players) HandOutCard(player, 1);
 
@@ -140,6 +141,7 @@ namespace GameCore.Classes
             return new GameState()
             {
                 Status = _gameStatus,
+                //CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 Direction = _direction,
                 LastCardPlayed = LastCardPlayed(),

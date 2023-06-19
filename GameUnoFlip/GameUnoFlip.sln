@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Network", "Network\Network.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameCore", "GameCore\GameCore.csproj", "{CB53729C-CF24-4621-9D5C-11A5E2CF3756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleServer", "ConsoleServer\ConsoleServer.csproj", "{043BFCA4-73F6-4099-AB9D-55D847D060C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleServer", "ConsoleServer\ConsoleServer.csproj", "{043BFCA4-73F6-4099-AB9D-55D847D060C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerLib", "ServerLib\ServerLib.csproj", "{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDB", "TestDB\TestDB.csproj", "{F97314A6-E122-4CFB-B929-C54B8A181B25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{043BFCA4-73F6-4099-AB9D-55D847D060C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{043BFCA4-73F6-4099-AB9D-55D847D060C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043BFCA4-73F6-4099-AB9D-55D847D060C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

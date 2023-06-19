@@ -94,7 +94,7 @@ namespace GameCore.Classes
             darkCardSides.Flush();
 
             for (int i = 0; i < lightCardSides.Count; i++)
-                cards.Add(new Card(lightCardSides[i], darkCardSides[i]));
+                cards.Add(new Card(lightCardSides[i], darkCardSides[lightCardSides.Count-1-i]));
 
             cards.Flush();
 

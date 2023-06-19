@@ -8,7 +8,7 @@ namespace GameCore.Classes
     public class Card
     {
         private static int cardsCount = 0;
-        public int Id = -1;
+        public int Id { get; set; }
 
         public CardSide[] Sides { get; set; }
 

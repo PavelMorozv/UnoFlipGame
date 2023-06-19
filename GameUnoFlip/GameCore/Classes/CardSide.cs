@@ -7,6 +7,8 @@ namespace GameCore.Classes
     [Serializable]
     public class CardSide
     {
+        private static int cardsCount = 0;
+        public int Id { get; set; }
         public Color Color { get; set; }
         public Action Action { get; set; }
         public int Value { get; set; }
@@ -15,6 +17,7 @@ namespace GameCore.Classes
 
         public CardSide(Color colors = Color.None, Action actions = Action.None, int value = -1)
         {
+            Id = cardsCount++;
             Color = colors;
             Action = actions;
             Value = value;

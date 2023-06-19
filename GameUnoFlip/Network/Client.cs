@@ -36,8 +36,7 @@ namespace Network
 
         public Client(TcpClient tcpClient)
         {
-            ConnectedID = ClientCounts;
-            ClientCounts += 1;
+            ConnectedID = ++ClientCounts;
 
             _connected = true;
             _client = tcpClient;

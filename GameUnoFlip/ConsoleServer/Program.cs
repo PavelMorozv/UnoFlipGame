@@ -1,4 +1,4 @@
-﻿using Network;
+﻿using ServerLib;
 using System.Net.WebSockets;
 
 namespace ConsoleServer

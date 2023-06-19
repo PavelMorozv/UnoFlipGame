@@ -18,6 +18,17 @@ namespace GameCore.Classes
 
         public int Id { get; private set; } = -1;
 
+        public Game()
+        {
+            Id = -1;
+            _currentSide = Side.Light;
+            _direction = Direction.Forward;
+            _currentPlayer = -1;
+            _players = new List<Player>();
+            _deck = DeckGenerator.GenerateRandomDeck();
+            _gameStatus = GameStatus.Initialization;
+        }
+
         public Game(int id)
         {
             Id = id;
@@ -29,6 +40,21 @@ namespace GameCore.Classes
             _gameStatus = GameStatus.Initialization;
         }
 
+        public Game(int id, List<Card> cards)
+        {
+            Id = id;
+            _currentSide = Side.Light;
+            _direction = Direction.Forward;
+            _currentPlayer = -1;
+            _players = new List<Player>();
+            _deck = cards;
+            _gameStatus = GameStatus.Initialization;
+            for (int i = 0; i < 30; i++)
+            {
+                _deck.Shuffle();
+            }
+        }
+
         public void AddPlayer(Player player)
         {
             _players.Add(player);
@@ -38,7 +64,7 @@ namespace GameCore.Classes
         {
             _currentPlayer = new Random().Next(0, _players.Count);
 
-            foreach (Player player in _players) HandOutCard(player, 3);
+            foreach (Player player in _players) HandOutCard(player, 7);
 
             _gameStatus = GameStatus.InProcess;
         }
@@ -50,7 +76,7 @@ namespace GameCore.Classes
 
         public bool Move(int playerID, Card card)
         {
-            var player = _players.First(p => p.Id == playerID);
+            var player = _players.FirstOrDefault(p => p.Id == playerID);
             if (_gameStatus != GameStatus.InProcess) return false;
             if (_players.IndexOf(player) != _currentPlayer) return false;
             if (!IsMovePosible(LastCardPlayed(), card, _currentSide)) return false;

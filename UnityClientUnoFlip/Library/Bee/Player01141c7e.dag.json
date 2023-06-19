@@ -290,7 +290,7 @@
       "DisplayName": "Writing boot.config_tyr4.info",
       "ActionType": "WriteFile",
       "PayloadOffset": 83,
-      "PayloadLength": 15742,
+      "PayloadLength": 15850,
       "PayloadDebugContentSnippet": "{\"System.Object\":null,\"Bee.Tun",
       "Inputs": [],
       "Outputs": [
@@ -384,15 +384,15 @@
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll",
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll",
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.dll",
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll",
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.dll",
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/Microsoft.Bcl.AsyncInterfaces.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Runtime.CompilerServices.Unsafe.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Text.Json.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/Network.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Text.Encodings.Web.dll",
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/GameCore.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/Microsoft.Bcl.AsyncInterfaces.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Runtime.CompilerServices.Unsafe.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Text.Json.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/Network.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Text.Encodings.Web.dll",
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/GameCore.dll",
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32/Facades/System.Buffers.dll",
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32/Facades/System.Memory.dll",
         "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32/Facades/System.Threading.Tasks.Extensions.dll",
@@ -1302,7 +1302,7 @@
       "DisplayName": "Copying Assembly-CSharp.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/Assembly-CSharp.dll"
@@ -1314,7 +1314,7 @@
       "DisplayName": "Copying Unity.AI.Navigation.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/Unity.AI.Navigation.dll"
@@ -1326,7 +1326,7 @@
       "DisplayName": "Copying UnityEngine.UI.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/UnityEngine.UI.dll"
@@ -1338,7 +1338,7 @@
       "DisplayName": "Copying Microsoft.Bcl.AsyncInterfaces.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/Microsoft.Bcl.AsyncInterfaces.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/Microsoft.Bcl.AsyncInterfaces.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll"
@@ -1350,7 +1350,7 @@
       "DisplayName": "Copying System.Runtime.CompilerServices.Unsafe.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Runtime.CompilerServices.Unsafe.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Runtime.CompilerServices.Unsafe.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll"
@@ -1362,7 +1362,7 @@
       "DisplayName": "Copying System.Text.Json.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Text.Json.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Text.Json.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/System.Text.Json.dll"
@@ -1374,7 +1374,7 @@
       "DisplayName": "Copying Network.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/Network.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/Network.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/Network.dll"
@@ -1386,7 +1386,7 @@
       "DisplayName": "Copying System.Text.Encodings.Web.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/System.Text.Encodings.Web.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/System.Text.Encodings.Web.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/System.Text.Encodings.Web.dll"
@@ -1398,7 +1398,7 @@
       "DisplayName": "Copying GameCore.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/GitHub/UnityClientUnoFlip/Assets/Plugins/GameCore.dll"
+        "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Assets/Plugins/GameCore.dll"
       ],
       "Outputs": [
         "C:/Users/PavelMorozov-PC/Desktop/Для ПК/UnoFlip_Data/Managed/GameCore.dll"
@@ -1709,7 +1709,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info",
       "DisplayName": "Writing app.info",
       "ActionType": "WriteFile",
-      "PayloadOffset": 15914,
+      "PayloadOffset": 16022,
       "PayloadLength": 27,
       "PayloadDebugContentSnippet": "ru.pavelmorozov.uno\nUnoFlip",
       "Inputs": [],
@@ -2377,6 +2377,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/Player01141c7e.dag.json",
-  "PayloadsFile": "D:/GitHub/UnityClientUnoFlip/Library/Bee/Player01141c7e.dag.payloads",
+  "PayloadsFile": "D:/GitHub/UnoFlipGame/UnityClientUnoFlip/Library/Bee/Player01141c7e.dag.payloads",
   "RelativePathToRoot": "../.."
 }

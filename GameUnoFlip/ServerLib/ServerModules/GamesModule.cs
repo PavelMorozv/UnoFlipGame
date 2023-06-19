@@ -1,5 +1,6 @@
 ﻿using GameCore.Classes;
 using GameCore.Structs;
+using Microsoft.EntityFrameworkCore;
 using Network;
 
 namespace ServerLib.ServerModules
@@ -10,6 +11,7 @@ namespace ServerLib.ServerModules
         private LinkedList<Player> players;
         private NetworkModule networkModule;
         private RoomsModule roomsModule;
+        private DBModule DBM;
 
         private object roomsLock = new object();
 
@@ -28,6 +30,7 @@ namespace ServerLib.ServerModules
             roomsModule = ModuleManager.GetModule<RoomsModule>();
             networkModule = ModuleManager.GetModule<NetworkModule>();
             networkModule.OnClientReciveMessage += NetworkModule_OnClientReciveMessage;
+            DBM = ModuleManager.GetModule<DBModule>();
             Console.WriteLine($"[{Name}] Инициализация завершена");
         }
 
@@ -43,7 +46,7 @@ namespace ServerLib.ServerModules
             {
                 var p = players.FirstOrDefault((p) => p.Id == client.ConnectedID);
 
-                if (p.Game.Id == 1) 
+                if (p.Game.Id == 1)
                     Console.WriteLine(packet);
 
                 switch (packet.Get<string>(Property.Method))
@@ -86,7 +89,7 @@ namespace ServerLib.ServerModules
                             .Add(Property.Data, player.Game.GetState());
 
                     if (players.Contains(player))
-                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);     
+                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
                 }
             }
 
@@ -102,6 +105,16 @@ namespace ServerLib.ServerModules
 
         }
 
+        public void DeleteGame(int gameid)
+        {
+            var game = games.FirstOrDefault(g => g.Id == gameid);
+            foreach (var player in game.GetPlayers())
+            {
+                players.Remove(player);
+            }
+            games.Remove(game);
+        }
+
         public Game GetGame(int id)
         {
             return games.FirstOrDefault(g => g.Id == id);
@@ -109,7 +122,9 @@ namespace ServerLib.ServerModules
 
         public int GetIdNewGame(int id, List<Client> clients)
         {
-            Game game = new Game(id);
+            var cards = DBM.AppDBContext.Cards.Include(c => c.Ligth).Include(c => c.Dark).Select(c => c.ToCard()).ToList();
+
+            Game game = new Game(id, cards);
 
             foreach (var client in clients)
             {

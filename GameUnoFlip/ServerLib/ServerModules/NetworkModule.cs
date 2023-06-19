@@ -76,7 +76,7 @@ namespace ServerLib.ServerModules
 
         public void Initialize()
         {
-            dbContext = new AppDBContext();
+            dbContext = ModuleManager.GetModule<DBModule>().AppDBContext;
 
             List<Card> cards = DeckGenerator.GenerateRandomDeck();
 

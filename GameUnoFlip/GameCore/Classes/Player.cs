@@ -53,7 +53,7 @@ namespace GameCore.Classes
 
         public void RemoveCard(Card card)
         {
-            var tempCard = Cards.First(c => c.Id == card.Id);
+            var tempCard = Cards.FirstOrDefault(c => c.Id == card.Id);
             Cards.Remove(tempCard);
             OnRemoveCard?.Invoke(this, card);
         }

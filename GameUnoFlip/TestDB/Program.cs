@@ -1,4 +1,5 @@
 ﻿using GameCore.Enums;
+using Microsoft.EntityFrameworkCore;
 using ServerLib.GameContent;
 using Action = GameCore.Enums.Action;
 
@@ -16,6 +17,14 @@ namespace TestDB
 
             //dBContext.Sides.Select(s => s.ToString()).ToList().ForEach(s => Console.WriteLine(s));
             //dBContext.Cards.Select(c => c.Ligth.ToString()).ToList().ForEach(s => Console.WriteLine(s));
+
+
+            var cards = dBContext.Cards.Include(c => c.Ligth).Include(c => c.Dark).Select(c => c.ToCard()).ToList();
+
+            foreach (var card in cards) 
+            {
+                Console.WriteLine(card);
+            }
 
             Console.ReadLine();
         }

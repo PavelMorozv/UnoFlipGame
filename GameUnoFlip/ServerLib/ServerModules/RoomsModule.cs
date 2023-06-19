@@ -1,4 +1,6 @@
-﻿using Network;
+﻿using Microsoft.EntityFrameworkCore;
+using Network;
+using System.Data.Entity;
 using ServerLib.GameContent;
 
 namespace ServerLib.ServerModules
@@ -8,7 +10,7 @@ namespace ServerLib.ServerModules
         private NetworkModule networkModule;
         private GamesModule gamesModule;
 
-        AppDBContext appDBContext;
+        DBModule DBM;
 
         private List<Room> rooms;
         readonly object lockRoom = new object();
@@ -27,7 +29,7 @@ namespace ServerLib.ServerModules
             networkModule.OnClientReciveMessage += NetworkModule_onClientReciveMessage;
             networkModule.OnClientDisconnected += NetworkModule_onClientDisconnected;
 
-            //AppDBContext appDBContext = new AppDBContext();
+            DBM = ModuleManager.GetModule<DBModule>();
 
             gamesModule = ModuleManager.GetModule<GamesModule>();
             lock (lockRoom)
@@ -132,15 +134,6 @@ namespace ServerLib.ServerModules
 
                     case "getList":
                         {
-                            //List<string> listRooms = new List<string>();
-
-                            //foreach (var r in rooms)
-                            //{
-                            //    listRooms.Add($"[{r.Id}][{r.Name}][{r.Clients.Count}]");
-                            //}
-
-                            //rooms.Select(r => r.ToString()).ToArray()
-
                             client.Send(new Packet()
                                         .Add(Property.Type, PacketType.Response)
                                         .Add(Property.Method, packet.Get<string>(Property.Method))
@@ -210,7 +203,12 @@ namespace ServerLib.ServerModules
         {
             lock (lockRoom)
             {
-                rooms.RemoveAll(r => r.GameId != null && gamesModule.GetGame((int)r.GameId).GetState().Status == GameCore.Enums.GameStatus.EndGame);
+                var room = rooms.FirstOrDefault(r => r.GameId != null && gamesModule.GetGame((int)r.GameId).GetState().Status == GameCore.Enums.GameStatus.EndGame);
+                if (room?.Id > -1)
+                {
+                    gamesModule.DeleteGame(room.Id);
+                    rooms.Remove(room);
+                }
             }
         }
 
@@ -226,15 +224,22 @@ namespace ServerLib.ServerModules
     }
 
     [Serializable]
+    public enum RoomState
+    {
+        Waiting
+    }
+
+    [Serializable]
     public class Room
     {
-        private static int RoomsCount = 0;
+        private static int RoomsCount = 1;
         public int Id { get; private set; } = -1;
         public string? Name { get; private set; }
         public Client? Owner { get; set; }
         public List<Client>? Clients { get; private set; }
         public int? GameId { get; set; }
 
+        public Room() { }
         public Room(string name, Client owner = null)
         {
             Id = RoomsCount++;

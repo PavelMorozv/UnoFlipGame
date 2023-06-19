@@ -90,13 +90,13 @@ namespace GameCore.Classes
 
             }
 
-            lightCardSides.Flush();
-            darkCardSides.Flush();
+            lightCardSides.Shuffle();
+            darkCardSides.Shuffle();
 
             for (int i = 0; i < lightCardSides.Count; i++)
                 cards.Add(new Card(lightCardSides[i], darkCardSides[lightCardSides.Count-1-i]));
 
-            cards.Flush();
+            cards.Shuffle();
 
             return cards;
         }

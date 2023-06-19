@@ -49,7 +49,7 @@ namespace GameCore.Classes
             _players = new List<Player>();
             _deck = cards;
             _gameStatus = GameStatus.Initialization;
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 50; i++)
             {
                 _deck.Shuffle();
             }
@@ -66,6 +66,15 @@ namespace GameCore.Classes
 
             foreach (Player player in _players) HandOutCard(player, 7);
 
+            while (_deck.FirstOrDefault().GetSide(_currentSide).Action == Action.Wild ||
+                _deck.FirstOrDefault().GetSide(_currentSide).Action == Action.WildGive ||
+                _deck.FirstOrDefault().GetSide(_currentSide).Action == Action.WildGiveForNow)
+            {
+                var temp = _deck[0];
+                _deck.Remove(temp);
+                _deck.Add(temp);
+            }
+
             _gameStatus = GameStatus.InProcess;
         }
 
@@ -80,8 +89,6 @@ namespace GameCore.Classes
             if (_gameStatus != GameStatus.InProcess) return false;
             if (_players.IndexOf(player) != _currentPlayer) return false;
             if (!IsMovePosible(LastCardPlayed(), card, _currentSide)) return false;
-
-
 
             _deck.Add(card);
 

@@ -7,16 +7,18 @@ namespace GameCore.Classes
     [Serializable]
     public class Card
     {
-        private static int cardsCount = 0;
-        public int Id { get; set; }
-
+        public int Id { get; set; } = -1;
         public CardSide[] Sides { get; set; }
 
-        public Card() { Id = cardsCount++; }
+        public Card() { }
 
         public Card(CardSide light, CardSide dark)
         {
-            Id = cardsCount++;
+            Sides = new CardSide[] { light, dark };
+        }
+        public Card(int cardId, CardSide light, CardSide dark)
+        {
+            Id = cardId;
             Sides = new CardSide[] { light, dark };
         }
 
@@ -57,7 +59,6 @@ namespace GameCore.Classes
 
         public string ToString(Side cardSides)
         {
-            //return "Card: " + (cardSides == Side.Light ? "Light {" + Sides[(int)Side.Light] + "}" : "Dark {" + Sides[(int)Side.Dark] + "}");
             return $"{(cardSides == Side.Light ? Sides[(int)Side.Light] : Sides[(int)Side.Dark])}";
         }
 

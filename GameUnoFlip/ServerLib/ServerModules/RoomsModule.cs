@@ -1,48 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Network;
-using System.Data.Entity;
-using ServerLib.GameContent;
+﻿using Network;
 
 namespace ServerLib.ServerModules
 {
     public class RoomsModule : IModule
     {
+        public string Name { get; private set; }
+
         private NetworkModule networkModule;
         private GamesModule gamesModule;
-
-        DBModule DBM;
-
         private List<Room> rooms;
+
         readonly object lockRoom = new object();
 
-        public string Name { get; private set; }
 
         public RoomsModule(string name)
         {
             Name = name;
-        }
-
-        public void Initialize()
-        {
-            Console.WriteLine($"[{Name}] Инициализация...");
-            networkModule = ModuleManager.GetModule<NetworkModule>();
-            networkModule.OnClientReciveMessage += NetworkModule_onClientReciveMessage;
-            networkModule.OnClientDisconnected += NetworkModule_onClientDisconnected;
-
-            DBM = ModuleManager.GetModule<DBModule>();
-
-            gamesModule = ModuleManager.GetModule<GamesModule>();
-            lock (lockRoom)
-            {
-                rooms = new List<Room>();
-            }
-
-            Console.WriteLine($"[{Name}] Инициализация завершена");
-        }
-
-        private void NetworkModule_onClientDisconnected(Client client)
-        {
-
         }
 
         private void NetworkModule_onClientReciveMessage(Client client, Packet packet)
@@ -58,8 +31,8 @@ namespace ServerLib.ServerModules
                             room = new Room(packet.Get<string>(Property.Data), client);
                             room.Clients.Add(client);
                             rooms.Add(room);
-                            client.Send(new Packet().
-                                Add(Property.Type, PacketType.Response)
+                            client.Send(new Packet()
+                                .Add(Property.Type, PacketType.Response)
                                 .Add(Property.TargetModule, Name)
                                 .Add(Property.Method, packet.Get<string>(Property.Method))
                                 .Add(Property.Data, true));
@@ -114,8 +87,7 @@ namespace ServerLib.ServerModules
 
                                 if (room.Owner == client)
                                 {
-                                    if (room.Clients.Count > 0)
-                                        room.Owner = room.Clients.FirstOrDefault();
+                                    if (room.Clients.Count > 0) room.Owner = room.Clients.FirstOrDefault();
                                 }
 
                                 Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} Вышел из комнаты: {room.Name}");
@@ -123,10 +95,10 @@ namespace ServerLib.ServerModules
                             else
                             {
                                 client.Send(new Packet()
-                                        .Add(Property.Type, PacketType.Response)
-                                        .Add(Property.TargetModule, Name)
-                                        .Add(Property.Method, packet.Get<string>(Property.Method))
-                                        .Add(Property.Data, false));
+                                    .Add(Property.Type, PacketType.Response)
+                                    .Add(Property.TargetModule, Name)
+                                    .Add(Property.Method, packet.Get<string>(Property.Method))
+                                    .Add(Property.Data, false));
                             }
 
                             break;
@@ -135,10 +107,10 @@ namespace ServerLib.ServerModules
                     case "getList":
                         {
                             client.Send(new Packet()
-                                        .Add(Property.Type, PacketType.Response)
-                                        .Add(Property.Method, packet.Get<string>(Property.Method))
-                                        .Add(Property.TargetModule, Name)
-                                        .Add(Property.Data, rooms.Select(r => r.ToString()).ToArray()));
+                                .Add(Property.Type, PacketType.Response)
+                                .Add(Property.Method, packet.Get<string>(Property.Method))
+                                .Add(Property.TargetModule, Name)
+                                .Add(Property.Data, rooms.Select(r => r.ToString()).ToArray()));
 
                             Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} запросил список комнат");
                             break;
@@ -151,10 +123,10 @@ namespace ServerLib.ServerModules
                             {
                                 room = rooms.FirstOrDefault((x) => x.Id == i);
                                 var newPacket = new Packet()
-                                        .Add(Property.Type, PacketType.Response)
-                                        .Add(Property.TargetModule, Name)
-                                        .Add(Property.Method, packet.Get<string>(Property.Method))
-                                        .Add(Property.Data, packet.Get<string>(Property.Data));
+                                    .Add(Property.Type, PacketType.Response)
+                                    .Add(Property.TargetModule, Name)
+                                    .Add(Property.Method, packet.Get<string>(Property.Method))
+                                    .Add(Property.Data, packet.Get<string>(Property.Data));
 
                                 foreach (var c in room.Clients)
                                 {
@@ -166,39 +138,49 @@ namespace ServerLib.ServerModules
                             else
                             {
                                 client.Send(new Packet()
-                                        .Add(Property.Type, PacketType.Response)
-                                        .Add(Property.TargetModule, Name)
-                                        .Add(Property.Method, packet.Get<string>(Property.Method))
-                                        .Add(Property.Error, $"Error: На сервере нет конат в которых вы состоите!"));
+                                    .Add(Property.Type, PacketType.Response)
+                                    .Add(Property.TargetModule, Name)
+                                    .Add(Property.Method, packet.Get<string>(Property.Method))
+                                    .Add(Property.Error, $"Error: На сервере нет конат в которых вы состоите!"));
                             }
 
                             break;
                         }
 
                     default:
-                        client.Send(new Packet()
-                                        .Add(Property.Type, PacketType.Response)
-                                        .Add(Property.TargetModule, Name)
-                                        .Add(Property.Method, packet.Get<string>(Property.Method))
-                                        .Add(Property.Error, $"Error: В модуле {Name} нет имеет метода {packet.Get<string>(Property.Method)}!"));
+                        client.Send(new Packet().Add(Property.Type, PacketType.Response)
+                            .Add(Property.TargetModule, Name)                                    
+                            .Add(Property.Method, packet.Get<string>(Property.Method))
+                            .Add(Property.Error, $"Error: В модуле {Name} нет имеет метода {packet.Get<string>(Property.Method)}!"));
 
                         Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} пытается выполнить несуществующую команду");
                         break;
                 }
             }
         }
-
-        public Client GetClientsById(int roomId, int playerId)
-        {
-            //findClient = rooms.SelectMany((r) => r.Clients).ToList().First((c) => c.ConnectedID == id);
-            return rooms.FirstOrDefault(r => r.Id == roomId).Clients.FirstOrDefault(c => c.ConnectedID == playerId);
-        }
-
-        public void Shutdown()
+        private void NetworkModule_onClientDisconnected(Client client)
         {
 
         }
 
+
+        public void Initialize()
+        {
+            Console.WriteLine($"[{Name}] Инициализация...");
+            networkModule = ModuleManager.GetModule<NetworkModule>();
+            networkModule.OnClientReciveMessage += NetworkModule_onClientReciveMessage;
+            networkModule.OnClientDisconnected += NetworkModule_onClientDisconnected;
+
+            DBM = ModuleManager.GetModule<DBModule>();
+
+            gamesModule = ModuleManager.GetModule<GamesModule>();
+            lock (lockRoom)
+            {
+                rooms = new List<Room>();
+            }
+
+            Console.WriteLine($"[{Name}] Инициализация завершена");
+        }
         public void Update()
         {
             lock (lockRoom)
@@ -211,16 +193,17 @@ namespace ServerLib.ServerModules
                 }
             }
         }
-
-        private void PrintRooms()
+        public void Shutdown()
         {
-            Console.WriteLine($"- Rooms Module --------------------------");
-            foreach (var r in rooms)
-            {
-                Console.WriteLine($"[{r.Id}][{r.Name}][{r.Clients.Count}]");
-            }
-            Console.WriteLine($"=========================================");
+
         }
+
+
+        public Client GetClientsById(int roomId, int playerId)
+        {
+            return rooms.FirstOrDefault(r => r.Id == roomId).Clients.FirstOrDefault(c => c.ConnectedID == playerId);
+        }
+
     }
 
     [Serializable]
@@ -251,7 +234,6 @@ namespace ServerLib.ServerModules
         public override string ToString()
         {
             return $"{Id}|{Name}|{Clients?.Count}";
-            //return Regex.Unescape(JsonSerializer.Serialize(this));
         }
     }
 }

@@ -77,7 +77,7 @@ public class t_Card
 
     public Card ToCard()
     {
-        return new Card(Ligth.ToCardSide(), Dark.ToCardSide());
+        return new Card(Id, Ligth.ToCardSide(), Dark.ToCardSide());
     }
     public string ToString(Side side)
     {

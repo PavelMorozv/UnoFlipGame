@@ -35,6 +35,14 @@ public class DropDeck : MonoBehaviour, IDropHandler
             ShowColorSelection(card, gm.gameState.Side);
             return;
         }
+        if(card.Action(gm.gameState.Side) == Action.Flip
+            && card.Action(gm.gameState.Side==Side.Light ? Side.Dark : Side.Light).ToString().Contains("Wild"))
+        {
+            if (gm.gameState.Side == Side.Light) gm.gameState.Side = Side.Dark; 
+            else gm.gameState.Side = Side.Light;
+
+            ShowColorSelection(card, gm.gameState.Side);
+        }
         else
         {
             SendCardToServer(card);

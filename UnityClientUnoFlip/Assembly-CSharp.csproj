@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ItemPart.cs" />
     <Compile Include="Assets\Scripts\Menu\ListRoom\ListView.cs" />
+    <Compile Include="Assets\Scripts\Menu\AuthView\AuthView.cs" />
     <Compile Include="Assets\Scripts\ColorsrPart.cs" />
     <Compile Include="Assets\Scripts\Menu\CreateRoom\CreateRoom.cs" />
     <Compile Include="Assets\Scripts\CardMovement.cs" />

@@ -171,8 +171,6 @@ namespace ServerLib.ServerModules
             networkModule.OnClientReciveMessage += NetworkModule_onClientReciveMessage;
             networkModule.OnClientDisconnected += NetworkModule_onClientDisconnected;
 
-            DBM = ModuleManager.GetModule<DBModule>();
-
             gamesModule = ModuleManager.GetModule<GamesModule>();
             lock (lockRoom)
             {

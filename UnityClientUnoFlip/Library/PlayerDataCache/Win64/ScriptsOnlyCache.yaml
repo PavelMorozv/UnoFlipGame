@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AuthView
     - CardDesign
     - CardMovement
     - ColorsrPart
@@ -34,6 +35,8 @@ ScriptsOnlyBuild:
     GameCore:
     - GameCore.Structs.GameState
     - GameCore.Structs.PlayerState
+    Network:
+    - Network.Auth
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -56,6 +59,9 @@ ScriptsOnlyBuild:
     methodName: MainMenu
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
+    methodName: AuthView
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
     methodName: RoomList
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
@@ -66,6 +72,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: RoomCreate
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
+    methodName: MainMenu
   sceneClasses:
     Assets/Scenes/GameScene.unity:
     - Class: 1
@@ -132,6 +141,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 17500}
     - Class: 114
       Script: {instanceID: 17686}
+    - Class: 114
+      Script: {instanceID: 39134}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -387,7 +398,7 @@ ScriptsOnlyBuild:
     className: NavMeshSurface
   - hash:
       serializedVersion: 2
-      Hash: ee123eca6fa61dc5ad489dbf15994ee2
+      Hash: 21776286df3d75f9319078d345c43181
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MyGameManager
@@ -399,7 +410,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: be71614e72ead418585cb49b047579a3
+      Hash: 10c5debaf6dda15e2ab1039da3bb431b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MenuManager
@@ -475,8 +486,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.AI.Navigation
     namespaceName: Unity.AI.Navigation
     className: NavMeshLink
+  - hash:
+      serializedVersion: 2
+      Hash: 8ff90bb7bee76581fab4da43c9327c55
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AuthView
   platform: 19
   scenePathNames:
   - Assets/Scenes/GameScene.unity
-  playerPath: "C:/Users/PavelMorozov-PC/Desktop/\u0414\u043B\u044F \u041F\u041A/\u0418\u0433\u0440\u0430
-    \u0434\u043B\u044F \u041F\u041A/UnoFlip.exe"
+  playerPath: C:/Users/PavelMorozov-PC/Desktop/For PC/UnoFlip.exe

@@ -2,6 +2,7 @@
 using GameCore.Structs;
 using Microsoft.EntityFrameworkCore;
 using Network;
+using ServerLib.GameContent;
 
 namespace ServerLib.ServerModules
 {
@@ -14,7 +15,7 @@ namespace ServerLib.ServerModules
         private NetworkModule? networkModule;
         private RoomsModule? roomsModule;
         private DBModule? DBM;
-
+        private AppDBContext dbContext;
 
         public GamesModule(string name)
         {
@@ -107,7 +108,7 @@ namespace ServerLib.ServerModules
         }
 
 
-        private void NetworkModule_OnClientReciveMessage(Client client, Packet packet)
+        private async void NetworkModule_OnClientReciveMessage(Client client, Packet packet)
         {
             if (packet.Get<string>(Property.TargetModule) != Name) return;
 
@@ -156,10 +157,9 @@ namespace ServerLib.ServerModules
                         .Add(Property.Data, player.Game.GetState());
 
                     if (players.Contains(player))
-                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+                        await roomsModule.GetClientsById(player.Game.Id, player.Id).SendAsync(pkg);
                 }
             }
-
         }
         private void Player_OnAddCard(Player player, Card card)
         {

@@ -17,6 +17,7 @@ namespace ServerLib
             Modules = new ModuleManager();
 
             Modules.AddModule(new DBModule());
+            Modules.AddModule(new AuthorizationModule());
             Modules.AddModule(new RoomsModule("RoomsModule"));
             Modules.AddModule(new GamesModule("GamesModule"));
             Modules.AddModule(new NetworkModule());

@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     public GameObject roomList;
     public GameObject roomCreate;
     public GameObject gamePole;
+    public GameObject authView;
 
     public void MainMenu()
     {
@@ -14,6 +15,7 @@ public class MenuManager : MonoBehaviour
         roomList.SetActive(false);
         roomCreate.SetActive(false);
         gamePole.SetActive(false);
+        authView.SetActive(false);
     }
 
     public void RoomList()
@@ -22,6 +24,7 @@ public class MenuManager : MonoBehaviour
         roomList.SetActive(true);
         roomCreate.SetActive(false);
         gamePole.SetActive(false);
+        authView.SetActive(false);
     }
 
     public void RoomCreate()
@@ -30,6 +33,7 @@ public class MenuManager : MonoBehaviour
         roomList.SetActive(false);
         roomCreate.SetActive(true);
         gamePole.SetActive(false);
+        authView.SetActive(false);
     }
 
     public void GmaePole()
@@ -38,6 +42,16 @@ public class MenuManager : MonoBehaviour
         roomList.SetActive(false);
         roomCreate.SetActive(false);
         gamePole.SetActive(true);
+        authView.SetActive(false);
+    }
+
+    public void AuthView()
+    {
+        mainMenu.SetActive(false);
+        roomList.SetActive(false);
+        roomCreate.SetActive(false);
+        gamePole.SetActive(false);
+        authView.SetActive(true);
     }
 
     public void Exit()

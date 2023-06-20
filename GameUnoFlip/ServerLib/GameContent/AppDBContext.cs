@@ -47,6 +47,8 @@ public class t_User
 {
     public int Id { get; set; }
     public string Login { get; set; }
+    public string? Password { get; set; }
+    public string? Tokken { get; set; }
 }
 
 public class t_Card

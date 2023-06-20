@@ -1,42 +1,60 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace Network
 {
     public static class NetworkUtils
     {
-        // Метод для отправки сообщения с указанием размера пакета
-        public static void SendMessage(Socket socket, byte[] message)
+        public static void SendMessage(TcpClient client, byte[] message)
         {
-            // Получение размера пакета
             int packetSize = message.Length;
             byte[] packetSizeBytes = BitConverter.GetBytes(packetSize);
-
-            // Отправка размера пакета
-            socket.Send(packetSizeBytes);
-
-            // Отправка самого пакета
-            socket.Send(message);
+            NetworkStream stream = client.GetStream();
+            stream.Write(packetSizeBytes, 0, packetSizeBytes.Length);
+            stream.Write(message, 0, message.Length);
         }
 
-        // Метод для приема сообщения с указанием размера пакета
-        public static byte[] ReceiveMessage(Socket socket)
+        public static byte[] ReceiveMessage(TcpClient client)
         {
-            // Получение размера пакета
+            NetworkStream stream = client.GetStream();
             byte[] packetSizeBytes = new byte[sizeof(int)];
-            socket.Receive(packetSizeBytes);
+            stream.Read(packetSizeBytes, 0, packetSizeBytes.Length);
             int packetSize = BitConverter.ToInt32(packetSizeBytes, 0);
-
-            // Получение самого пакета
             byte[] message = new byte[packetSize];
             int bytesRead = 0;
             int totalBytesRead = 0;
             while (totalBytesRead < packetSize)
             {
-                bytesRead = socket.Receive(message, totalBytesRead, packetSize - totalBytesRead, SocketFlags.None);
+                bytesRead = stream.Read(message, totalBytesRead, packetSize - totalBytesRead);
                 totalBytesRead += bytesRead;
             }
+            return message;
+        }
 
+        public static async Task SendMessageAsync(TcpClient client, byte[] message)
+        {
+            int packetSize = message.Length;
+            byte[] packetSizeBytes = BitConverter.GetBytes(packetSize);
+            NetworkStream stream = client.GetStream();
+            await stream.WriteAsync(packetSizeBytes, 0, packetSizeBytes.Length);
+            await stream.WriteAsync(message, 0, message.Length);
+        }
+
+        public static async Task<byte[]> ReceiveMessageAsync(TcpClient client)
+        {
+            NetworkStream stream = client.GetStream();
+            byte[] packetSizeBytes = new byte[sizeof(int)];
+            await stream.ReadAsync(packetSizeBytes, 0, packetSizeBytes.Length);
+            int packetSize = BitConverter.ToInt32(packetSizeBytes, 0);
+            byte[] message = new byte[packetSize];
+            int bytesRead = 0;
+            int totalBytesRead = 0;
+            while (totalBytesRead < packetSize)
+            {
+                bytesRead = await stream.ReadAsync(message, totalBytesRead, packetSize - totalBytesRead);
+                totalBytesRead += bytesRead;
+            }
             return message;
         }
     }

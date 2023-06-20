@@ -22,6 +22,15 @@ public class MyGameManager : MonoBehaviour
 
     public Client client;
     public PlayerState player, enemy;
+
+    public Auth auth = new Auth()
+    {
+        Id = -1,
+        Login = "No name",
+        Password = "Password",
+        Tokken = ""
+    };
+
     public GameState gameState = new GameState()
     {
         CurrentPlayer = -1
@@ -36,10 +45,9 @@ public class MyGameManager : MonoBehaviour
         player = enemy = new PlayerState() { Id = -1, IsGive = false, IsUno = false, Cards = new List<Card>() };
 
         client = new Client("109.195.67.94", 9999);
-        //client.Send(new Packet().Add(Property.Type, PacketType.Response)
-        //    .Add(Property.TargetModule, "RoomsModule")
-        //    .Add(Property.Method, "join")
-        //    .Add(Property.Data, 0));
+        
+        client.Send(new Packet().Add(Property.Type, PacketType.Connect)
+            .Add(Property.Data, (PlayerPrefs.HasKey("Tokken") ?PlayerPrefs.GetString("Tokken") : "")));
     }
 
     void Update()
@@ -51,24 +59,12 @@ public class MyGameManager : MonoBehaviour
             OnReceive?.Invoke(pkg);
         }
 
-        //if (isReady)
-        //{
-        //    Destroy(mainMenus);
-        //}
-
         if (gameState.CurrentPlayer == player.Id && client.Connected)
         {
             CheckMove();
         }
+
         infoUpdate();
-        //if (client.Connected)
-        //{
-        //    Destroy(mainMenus);
-        //    if (gameState.CurrentPlayer == player.Id && client.Connected)
-        //    {
-        //        CheckMove();
-        //    }
-        //}
     }
 
     void ReciveProcess(Packet packet)
@@ -80,18 +76,12 @@ public class MyGameManager : MonoBehaviour
         {
             case "GameInit":
                 gameState = packet.Get<GameState>(Property.Data);
-
-                //gameState = Converter.GetObject<GameState>(gp.Data);
-                //Debug.Log("Game Init: " + gameState);
-                //enemy = new Player(gameState.CountPlayer - player.Id);
                 break;
 
             case "GameState":
 
-                //gameState = Converter.GetObject<GameState>(gp.Data);
                 gameState = packet.Get<GameState>(Property.Data);
                 DrawPlayerCards();
-                DrawEnemyCards();
                 DrawDropOrMain();
                 if (gameState.Status == GameStatus.EndGame)
                 {
@@ -136,21 +126,35 @@ public class MyGameManager : MonoBehaviour
             case "create":
                 if (packet.Get<bool>(Property.Data)) GameObject.Find("MenuController").GetComponent<MenuManager>().GmaePole();
                 break;
-        }
-    }
 
-    public void OnClickButtonPlay()
-    {
-        //if (!client.IsReady)
-        //{
-        //    client.SetReady();
-        //    mainMenus.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "Не готов";
-        //}
-        //else
-        //{
-        //    client.ResetReady();
-        //    mainMenus.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "Готов";
-        //}
+            case "FastAuth":
+
+                var resFastAuth = packet.Get<Auth>(Property.Data);
+                auth.Id = resFastAuth.Id;
+                auth.Login = resFastAuth.Login;
+                auth.Tokken = resFastAuth.Tokken;
+
+                PlayerPrefs.SetString("Login", auth.Login);
+                PlayerPrefs.SetString("Tokken", auth.Tokken);
+
+                PlayerPrefs.Save();
+
+                break;
+
+            case "FastReg":
+
+                var resFastReg = packet.Get<Auth>(Property.Data);
+                auth.Id = resFastReg.Id;
+                auth.Login = resFastReg.Login;
+                auth.Tokken = resFastReg.Tokken;
+
+                PlayerPrefs.SetString("Login", auth.Login);
+                PlayerPrefs.SetString("Tokken", auth.Tokken);
+
+                PlayerPrefs.Save();
+                break;
+
+        }
     }
 
     public void DrawPlayerCards()
@@ -161,21 +165,6 @@ public class MyGameManager : MonoBehaviour
         {
             AddCard(deckPlayer, card);
         }
-    }
-
-    public void onClick()
-    {
-        gameState.Side = gameState.Side == Side.Light ? Side.Dark : Side.Light;
-    }
-
-    public void DrawEnemyCards()
-    {
-        //deckEnemy.GetComponentsInChildren<CardDesign>().ToList().ForEach(c => Destroy(c.gameObject));
-
-        //foreach (var card in enemy.Cards)
-        //{
-        //    AddCard(deckEnemy, card);
-         //}
     }
 
     public void DrawDropOrMain()
@@ -220,6 +209,9 @@ public class MyGameManager : MonoBehaviour
         info.text = "";
 
         if (client?.ConnectedID != -1) info.text += client.ConnectedID + "\n";
+
+        info.text += $"AUTH DATA {{ ID: {auth.Id}, Login: {auth.Login}, Tokken: {auth.Tokken} }}\n";
+        
         info.text += gameState + "\n";
 
         info.text += player + "\n";

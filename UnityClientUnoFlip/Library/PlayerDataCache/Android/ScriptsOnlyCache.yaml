@@ -34,6 +34,8 @@ ScriptsOnlyBuild:
     GameCore:
     - GameCore.Structs.GameState
     - GameCore.Structs.PlayerState
+    Network:
+    - Network.Auth
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -387,7 +389,7 @@ ScriptsOnlyBuild:
     className: NavMeshSurface
   - hash:
       serializedVersion: 2
-      Hash: ee123eca6fa61dc5ad489dbf15994ee2
+      Hash: 21776286df3d75f9319078d345c43181
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MyGameManager

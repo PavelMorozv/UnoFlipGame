@@ -12,7 +12,6 @@ namespace GameCore.Classes
         public int Value { get; set; }
 
         public CardSide() { }
-
         public CardSide(Color colors = Color.None, Action actions = Action.None, int value = -1)
         {
             Color = colors;

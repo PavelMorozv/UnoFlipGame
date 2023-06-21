@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ServerLib.Server">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAAACBAAAAAAAAQAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Server.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Modules" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ServerLib.ServerModules.ModuleManager">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAAAAAAABAAAAAAAABAAAIAAAAAAAAAARA=</HashCode>
+      <FileName>ServerModules\ModuleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerLib.ServerModules.NetworkModule">
+    <Position X="3.75" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAACEACBQAAAAEAAQAACAAAAIAAQAAAAACIAAA=</HashCode>
+      <FileName>ServerModules\NetworkModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ServerLib.ServerModules.DBModule">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAQQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ServerModules\DBModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ServerLib.ServerModules.GamesModule">
+    <Position X="0.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BAQCCAAACAAIAQAIAQAAAQQAAAAAgAAIIACAAEAIABA=</HashCode>
+      <FileName>ServerModules\GamesModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ServerLib.ServerModules.AuthorizationModule">
+    <Position X="6.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAEAIAUAAAAAAAQQAAAAAAAAQAACAAAQAAJA=</HashCode>
+      <FileName>ServerModules\AuthorizationModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ServerLib.ServerModules.IModule">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerModules\IModule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1619,8 +1619,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 473816820}
   m_TextComponent: {fileID: 1979466953}
   m_Placeholder: {fileID: 717183613}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -2351,7 +2351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041E\u0436\u0438\u0434\u0430\u043D\u0438\u0435 \u0432\u0432\u043E\u0434\u0430"
+  m_Text: "\u041F\u0430\u0440\u043E\u043B\u044C"
 --- !u!222 &717183614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2431,7 +2431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041E\u0436\u0438\u0434\u0430\u043D\u0438\u0435 \u0432\u0432\u043E\u0434\u0430"
+  m_Text: "\u041B\u043E\u0433\u0438\u043D"
 --- !u!222 &730887288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4873,13 +4873,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2074910721}
   m_TextComponent: {fileID: 1021166935}
   m_Placeholder: {fileID: 730887287}
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 6
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 4
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:

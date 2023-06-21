@@ -1,8 +1,5 @@
 using Network;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class AuthView : MonoBehaviour
@@ -47,21 +44,31 @@ public class AuthView : MonoBehaviour
         {
             Auth auth = packet.Get<Auth>(Property.Data);
 
+            gameManager.auth = auth;
+
             PlayerPrefs.SetString("Login", auth.Login);
             PlayerPrefs.SetString("Tokken", auth.Tokken);
             PlayerPrefs.Save();
             menuManager.MainMenu();
         }
-
     }
 
     private void onClick_Login()
     {
         Auth auth = new Auth()
         {
+            Type = AuthMethods.login,
             Login = loginInput.text,
             Password = passwordInput.text
         };
+
+        if (auth.Login == "" && auth.Password == ""
+            && gameManager.auth.Login == auth.Login)
+        {
+            if (auth.Login == "") loginInput.text = "Логин не может быть пустым";
+            if (auth.Login == "") loginInput.text = "Пароль не может быть пустым";
+            return;
+        }
 
         gameManager.client.Send(new Packet()
             .Add(Property.Type, PacketType.Request)
@@ -74,9 +81,18 @@ public class AuthView : MonoBehaviour
     {
         Auth auth = new Auth()
         {
+            Type = AuthMethods.register,
             Login = loginInput.text,
             Password = passwordInput.text
         };
+
+        if (auth.Login == "" && auth.Password == ""
+            && gameManager.auth.Login == auth.Login)
+        {
+            if (auth.Login == "") loginInput.text = "Логин не может быть пустым";
+            if (auth.Login == "") loginInput.text = "Пароль не может быть пустым";
+            return;
+        }
 
         gameManager.client.Send(new Packet()
             .Add(Property.Type, PacketType.Request)

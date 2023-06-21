@@ -13,6 +13,7 @@ namespace Network
             NetworkStream stream = client.GetStream();
             stream.Write(packetSizeBytes, 0, packetSizeBytes.Length);
             stream.Write(message, 0, message.Length);
+            stream.Flush();
         }
 
         public static byte[] ReceiveMessage(TcpClient client)
@@ -39,6 +40,7 @@ namespace Network
             NetworkStream stream = client.GetStream();
             await stream.WriteAsync(packetSizeBytes, 0, packetSizeBytes.Length);
             await stream.WriteAsync(message, 0, message.Length);
+            await stream.FlushAsync();
         }
 
         public static async Task<byte[]> ReceiveMessageAsync(TcpClient client)

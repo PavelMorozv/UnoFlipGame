@@ -11,8 +11,9 @@ namespace ServerLib.ServerModules
         private List<Client> _clients = new List<Client>();
         private TcpListener _listener;
         private bool isRun = false;
-        private Task? serverTask;
+        private Thread? serverTask;
         private AuthorizationModule authModule;
+        private DateTime old;
 
         public event Action<Client, Packet>? OnClientReciveMessage;
         public event Action<Client>? OnClientDisconnected;
@@ -44,18 +45,19 @@ namespace ServerLib.ServerModules
             Console.WriteLine($"[NetworkModule] Запуск инициализации");
             _listener.Start();
             isRun = true;
-
-            serverTask = new Task(() =>
+            old = DateTime.Now;
+            serverTask = new Thread(() =>
             {
                 Console.WriteLine($"[NetworkModule listener] Задача слушателя запущена");
                 while (isRun)
                 {
                     AcceptClients();
                     ReadMessageFromClients();
-                    CheckConnection();
+                    if ((DateTime.Now - old).Seconds > 1) CheckConnection();
                     Thread.Sleep(100);
                 }
             });
+            serverTask.Priority = ThreadPriority.Highest;
             serverTask.Start();
 
             Console.WriteLine($"[NetworkModule] Инициализации завершена");

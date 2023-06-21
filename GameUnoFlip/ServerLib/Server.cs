@@ -1,6 +1,4 @@
 ﻿using ServerLib.ServerModules;
-using System.IO;
-using System.Threading;
 
 namespace ServerLib
 {
@@ -48,7 +46,7 @@ namespace ServerLib
 
                     // Дополнительный код для сервера
 
-                    Thread.Sleep(4000);
+                    Thread.Sleep(5000);
                 }
 
                 // Выгружаем модули

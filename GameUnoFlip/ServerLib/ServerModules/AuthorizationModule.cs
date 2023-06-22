@@ -59,9 +59,9 @@ namespace ServerLib.ServerModules
                     {
                         auth = packet.Get<Auth>(Property.Data);
                         users = DBM.AppDBContext.Users.ToList();
-                        user = users.Where(u => u.Id == client.ConnectedID).FirstOrDefault();
+                        user = users.Find(u => u.Id == client.ConnectedID);
 
-                        if (user != null)
+                        if (user == null)
                         {
                             await client.SendAsync(new Packet()
                                 .Add(Property.Type, PacketType.Response)
@@ -69,7 +69,6 @@ namespace ServerLib.ServerModules
                                 .Add(Property.Method, AuthMethods.register_Error)
                                 .Add(Property.Data, false));
                         }
-
                         user.Login = auth.Login;
                         user.Password = auth.Password;
                         DBM.AppDBContext.SaveChanges();
@@ -85,6 +84,28 @@ namespace ServerLib.ServerModules
                                 .Add(Property.TargetModule, "AuthorizationModule")
                                 .Add(Property.Method, AuthMethods.register_Ok)
                                 .Add(Property.Data, auth));
+                        //if (users.Where(x => x.Login == auth.Login).Count() > 0)
+                        //{
+                        //    await client.SendAsync(new Packet()
+                        //        .Add(Property.Type, PacketType.Response)
+                        //        .Add(Property.TargetModule, "AuthorizationModule")
+                        //        .Add(Property.Method, AuthMethods.register_Error)
+                        //        .Add(Property.Data, false));
+                        //}
+                        //else
+                        //{
+                        //    user = new t_User()
+                        //    {
+                        //        Login = auth.Login,
+                        //        Password = auth.Password,
+                        //    };
+
+                        //    DBM.AppDBContext.Users.Add(user);
+                        //    DBM.AppDBContext.SaveChanges();
+
+                        //    Console.WriteLine($"[AuthorizationModule] Клиент {auth.Login} успешно зарегистрирован с адреса {client.RemoteEndPoint()}");
+                        //}
+
                     }
                     break;
 
@@ -119,6 +140,31 @@ namespace ServerLib.ServerModules
                             .Add(Property.TargetModule, "AuthorizationModule")
                             .Add(Property.Method, AuthMethods.login_Ok)
                             .Add(Property.Data, auth));
+
+
+                        //if (user != null)
+                        //{
+
+                        //    user.Tokken = GenerateToken();
+                        //    clientsOnAuth[client] = user;
+                        //    DBM.AppDBContext.SaveChanges();
+
+                        //    Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно авторизован с адреса {client.RemoteEndPoint()}");
+
+                        //    await client.SendAsync(new Packet()
+                        //        .Add(Property.Type, PacketType.Response)
+                        //        .Add(Property.TargetModule, "AuthorizationModule")
+                        //        .Add(Property.Method, AuthMethods.login_Ok)
+                        //        .Add(Property.Data, user.Tokken));
+                        //}
+                        //else
+                        //{
+                        //    await client.SendAsync(new Packet()
+                        //        .Add(Property.Type, PacketType.Response)
+                        //        .Add(Property.TargetModule, "AuthorizationModule")
+                        //        .Add(Property.Method, AuthMethods.login_Error)
+                        //        .Add(Property.Data, false));
+                        //}
                     }
                     break;
 
@@ -149,6 +195,10 @@ namespace ServerLib.ServerModules
                     }
                     break;
             }
+
+            auth = null;
+            user = null;
+            users = null;
         }
 
         public int FastAuth(Client client, string tokken)
@@ -195,7 +245,7 @@ namespace ServerLib.ServerModules
 
             if (users.Where(x => x.Login == user.Login).Count() == 0)
             {
-                Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно подключен с адреса {client.RemoteEndPoint()}");
+                Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно зарегистрирован с адреса {client.RemoteEndPoint()}");
 
                 user.Tokken = GenerateToken();
                 DBM.AppDBContext.Users.Add(user);

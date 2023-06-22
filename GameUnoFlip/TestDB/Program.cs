@@ -13,6 +13,8 @@ namespace TestDB
             dBContext = new AppDBContext();
             CreateSides();
             CreateCard();
+
+            Console.ReadLine();
         }
 
         /// <summary>

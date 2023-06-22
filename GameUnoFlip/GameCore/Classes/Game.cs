@@ -66,8 +66,9 @@ namespace GameCore.Classes
 
             foreach (Player player in _players) HandOutCard(player, 7);
 
-            while (_deck.FirstOrDefault().GetSide(Side.Light).Action.ToString().Contains("Wild")
-                && _deck.FirstOrDefault().GetSide(Side.Dark).Action.ToString().Contains("Wild"))
+            while (_deck.FirstOrDefault().GetSide(_currentSide).Action == Action.Wild ||
+                _deck.FirstOrDefault().GetSide(_currentSide).Action == Action.WildGive ||
+                _deck.FirstOrDefault().GetSide(_currentSide).Action == Action.WildGiveForNow)
             {
                 var temp = _deck[0];
                 _deck.Remove(temp);
@@ -173,6 +174,7 @@ namespace GameCore.Classes
             return new GameState()
             {
                 Status = _gameStatus,
+                //CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 Direction = _direction,
                 LastCardPlayed = LastCardPlayed(),

@@ -127,7 +127,7 @@ namespace ServerLib.ServerModules
 
                             if (p.Game.Move(p.Id, tempCard))
                             {
-                                Console.WriteLine($"[{Name}] Игра: {p.Game.Id}.  Игрок {p.Id} сделал ход картой {tempCard.Id}");
+                                Console.WriteLine("Клиент " + p.Id + " сделал ход " + tempCard.Id);
                             }
 
                             break;
@@ -144,7 +144,6 @@ namespace ServerLib.ServerModules
                                 {
                                     p.Game.ActionEndMove();
                                 }
-                                Console.WriteLine($"[{Name}] Игра: {p.Game.Id}.  Игрок {p.Id} запросил карту из калоды");
                             }
                             break;
                         }
@@ -162,7 +161,6 @@ namespace ServerLib.ServerModules
                 }
             }
         }
-
         private void Player_OnAddCard(Player player, Card card)
         {
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
@@ -200,4 +198,5 @@ namespace ServerLib.ServerModules
             roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
         }
     }
+
 }

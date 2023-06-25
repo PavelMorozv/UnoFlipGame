@@ -1,5 +1,4 @@
 ﻿using ServerLib;
-using System.Net.WebSockets;
 
 namespace ConsoleServer
 {

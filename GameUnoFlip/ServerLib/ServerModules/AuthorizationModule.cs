@@ -1,4 +1,7 @@
-﻿using Network;
+﻿using Microsoft.EntityFrameworkCore;
+using Network;
+using System.Data.Entity;
+using System.Drawing;
 using System.Security.Cryptography;
 
 namespace ServerLib.ServerModules
@@ -45,12 +48,12 @@ namespace ServerLib.ServerModules
             clientsOnAuth.Add(client, new t_User() { Id = -1 });
         }
 
-        private async void NetworkModule_onClientReciveMessage(Client client, Packet packet)
+        private void NetworkModule_onClientReciveMessage(Client client, Packet packet)
         {
             if (packet.Get<string>(Property.TargetModule) != "AuthorizationModule") return;
 
             Auth auth;
-            t_User user;
+            t_User? user;
             List<t_User> users;
 
             switch (packet.Get<AuthMethods>(Property.Method))
@@ -58,113 +61,14 @@ namespace ServerLib.ServerModules
                 case AuthMethods.register:
                     {
                         auth = packet.Get<Auth>(Property.Data);
-                        users = DBM.AppDBContext.Users.ToList();
-                        user = users.Find(u => u.Id == client.ConnectedID);
-
-                        if (user == null)
-                        {
-                            await client.SendAsync(new Packet()
-                                .Add(Property.Type, PacketType.Response)
-                                .Add(Property.TargetModule, "AuthorizationModule")
-                                .Add(Property.Method, AuthMethods.register_Error)
-                                .Add(Property.Data, false));
-                        }
-                        user.Login = auth.Login;
-                        user.Password = auth.Password;
-                        DBM.AppDBContext.SaveChanges();
-
-                        auth.Id = user.Id;
-                        auth.Password = string.Empty;
-                        auth.Tokken = user.Tokken;
-
-                        Console.WriteLine($"[AuthorizationModule] Клиент {auth.Login} успешно зарегистрирован с адреса {client.RemoteEndPoint()}");
-
-                        await client.SendAsync(new Packet()
-                                .Add(Property.Type, PacketType.Response)
-                                .Add(Property.TargetModule, "AuthorizationModule")
-                                .Add(Property.Method, AuthMethods.register_Ok)
-                                .Add(Property.Data, auth));
-                        //if (users.Where(x => x.Login == auth.Login).Count() > 0)
-                        //{
-                        //    await client.SendAsync(new Packet()
-                        //        .Add(Property.Type, PacketType.Response)
-                        //        .Add(Property.TargetModule, "AuthorizationModule")
-                        //        .Add(Property.Method, AuthMethods.register_Error)
-                        //        .Add(Property.Data, false));
-                        //}
-                        //else
-                        //{
-                        //    user = new t_User()
-                        //    {
-                        //        Login = auth.Login,
-                        //        Password = auth.Password,
-                        //    };
-
-                        //    DBM.AppDBContext.Users.Add(user);
-                        //    DBM.AppDBContext.SaveChanges();
-
-                        //    Console.WriteLine($"[AuthorizationModule] Клиент {auth.Login} успешно зарегистрирован с адреса {client.RemoteEndPoint()}");
-                        //}
-
+                        client.ConnectedID = Register(client, auth.Login, auth.Password);
                     }
                     break;
 
                 case AuthMethods.login:
                     {
                         auth = packet.Get<Auth>(Property.Data);
-                        users = DBM.AppDBContext.Users.ToList();
-                        user = users.Find(u => u.Login == auth.Login && u.Password == auth.Password);
-
-                        if (user == null)
-                        {
-                            await client.SendAsync(new Packet()
-                                .Add(Property.Type, PacketType.Response)
-                                .Add(Property.TargetModule, "AuthorizationModule")
-                                .Add(Property.Method, AuthMethods.login_Error)
-                                .Add(Property.Data, false));
-                        }
-
-                        DBM.AppDBContext.Users.Remove(users.Find(u=> u.Id == client.ConnectedID));
-                        DBM.AppDBContext.SaveChanges(true);
-
-                        auth.Id = user.Id;
-                        auth.Password = string.Empty;
-                        auth.Tokken = user.Tokken;
-
-                        client.ConnectedID = user.Id;
-
-                        Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно авторизован с адреса {client.RemoteEndPoint()}");
-
-                        await client.SendAsync(new Packet()
-                            .Add(Property.Type, PacketType.Response)
-                            .Add(Property.TargetModule, "AuthorizationModule")
-                            .Add(Property.Method, AuthMethods.login_Ok)
-                            .Add(Property.Data, auth));
-
-
-                        //if (user != null)
-                        //{
-
-                        //    user.Tokken = GenerateToken();
-                        //    clientsOnAuth[client] = user;
-                        //    DBM.AppDBContext.SaveChanges();
-
-                        //    Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно авторизован с адреса {client.RemoteEndPoint()}");
-
-                        //    await client.SendAsync(new Packet()
-                        //        .Add(Property.Type, PacketType.Response)
-                        //        .Add(Property.TargetModule, "AuthorizationModule")
-                        //        .Add(Property.Method, AuthMethods.login_Ok)
-                        //        .Add(Property.Data, user.Tokken));
-                        //}
-                        //else
-                        //{
-                        //    await client.SendAsync(new Packet()
-                        //        .Add(Property.Type, PacketType.Response)
-                        //        .Add(Property.TargetModule, "AuthorizationModule")
-                        //        .Add(Property.Method, AuthMethods.login_Error)
-                        //        .Add(Property.Data, false));
-                        //}
+                        client.ConnectedID = Login(client, auth.Login, auth.Password);
                     }
                     break;
 
@@ -178,7 +82,7 @@ namespace ServerLib.ServerModules
                         {
                             Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно авторизован с адреса {client.RemoteEndPoint()}");
 
-                            await client.SendAsync(new Packet()
+                            client.Send(new Packet()
                                 .Add(Property.Type, PacketType.Response)
                                 .Add(Property.TargetModule, "AuthorizationModule")
                                 .Add(Property.Method, AuthMethods.login_OnUseToken)
@@ -186,7 +90,7 @@ namespace ServerLib.ServerModules
                         }
                         else
                         {
-                            await client.SendAsync(new Packet()
+                            client.Send(new Packet()
                                 .Add(Property.Type, PacketType.Response)
                                 .Add(Property.TargetModule, "AuthorizationModule")
                                 .Add(Property.Method, AuthMethods.login_Error)
@@ -200,6 +104,69 @@ namespace ServerLib.ServerModules
             user = null;
             users = null;
         }
+
+        private int Register(Client client, string login, string password)
+        {
+            var users = DBM.AppDBContext.Users.ToList();
+            var user = users.Find(u => u.Id == client.ConnectedID);
+
+            if (user != null)
+            {
+                user.Login = login;
+                user.Password = password;
+                DBM.AppDBContext.SaveChanges();
+
+                Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно зарегистрирован с адреса {client.RemoteEndPoint()}");
+
+                clientsOnAuth[client] = user;
+
+                client.Send(new Packet()
+                    .Add(Property.Type, PacketType.Connect)
+                    .Add(Property.TargetModule, "AuthorizationModule")
+                    .Add(Property.Method, AuthMethods.register_Ok)
+                    .Add(Property.Data, new Auth() { Id = user.Id, Login = user.Login, Tokken = user.Tokken }));
+
+                return user.Id;
+
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+
+        private int Login(Client client, string login, string password)
+        {
+            var users = DBM.AppDBContext.Users.ToList();
+
+            var user = users.Find(u => u.Login == login && u.Password == password);
+            if (user != null)
+            {
+                Console.WriteLine($"[AuthorizationModule] Клиент {user.Login} успешно авторизован с адреса {client.RemoteEndPoint()}");
+
+                var userTemp = users.Find(u => u.Id == client.ConnectedID);
+                if (userTemp != null && userTemp.Login.Contains("Guest"))
+                {
+                    DBM.AppDBContext.Users.Remove(userTemp);
+                    DBM.AppDBContext.SaveChanges();
+                }
+
+                clientsOnAuth[client] = user;
+
+                client.Send(new Packet()
+                    .Add(Property.Type, PacketType.Connect)
+                    .Add(Property.TargetModule, "AuthorizationModule")
+                    .Add(Property.Method, AuthMethods.login_Ok)
+                    .Add(Property.Data, new Auth() { Id = user.Id, Login = user.Login, Tokken = user.Tokken }));
+                return user.Id;
+            }
+            else
+            {
+                return FastReg(client);
+            }
+        }
+
 
         public int FastAuth(Client client, string tokken)
         {
@@ -257,7 +224,9 @@ namespace ServerLib.ServerModules
                     .Add(Property.Type, PacketType.Connect)
                     .Add(Property.Method, "FastReg")
                     .Add(Property.Data, new Auth() { Id = user.Id, Login = user.Login, Tokken = user.Tokken }));
+
                 return user.Id;
+
             }
             else
             {

@@ -19,6 +19,7 @@ public class MyGameManager : MonoBehaviour
     public GameObject Win;
     public GameObject Lost;
     public GameObject devInfo;
+    private Text info;
 
     public Client client;
     public PlayerState player, enemy;
@@ -36,7 +37,7 @@ public class MyGameManager : MonoBehaviour
         CurrentPlayer = -1
     };
 
-    public event Action<Packet>? OnReceive;
+    public event Action<Packet> OnReceive;
 
 
 
@@ -48,6 +49,7 @@ public class MyGameManager : MonoBehaviour
         
         client.Send(new Packet().Add(Property.Type, PacketType.Connect)
             .Add(Property.Data, (PlayerPrefs.HasKey("Tokken") ?PlayerPrefs.GetString("Tokken") : "")));
+        info = devInfo.GetComponent<Text>();
     }
 
     void Update()
@@ -127,6 +129,9 @@ public class MyGameManager : MonoBehaviour
                 if (packet.Get<bool>(Property.Data)) GameObject.Find("MenuController").GetComponent<MenuManager>().GmaePole();
                 break;
 
+
+
+
             case "FastAuth":
 
                 var resFastAuth = packet.Get<Auth>(Property.Data);
@@ -204,8 +209,6 @@ public class MyGameManager : MonoBehaviour
 
     private void infoUpdate()
     {
-        Text info = devInfo.GetComponent<Text>();
-
         info.text = "";
 
         if (client?.ConnectedID != -1) info.text += client.ConnectedID + "\n";

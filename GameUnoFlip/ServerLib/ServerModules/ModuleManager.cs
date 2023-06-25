@@ -45,6 +45,7 @@ namespace ServerLib.ServerModules
             foreach (IModule module in modules)
             {
                 module.Update();
+                Thread.Sleep(1000);
             }
         }
 

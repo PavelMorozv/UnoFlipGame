@@ -9,6 +9,7 @@ namespace ServerLib.ServerModules
         private NetworkModule networkModule;
         private GamesModule gamesModule;
         private List<Room> rooms;
+        //private Queue<Client> clientWaitFastGame;
 
         readonly object lockRoom = new object();
 
@@ -26,6 +27,17 @@ namespace ServerLib.ServerModules
             {
                 switch (packet.Get<string>(Property.Method))
                 {
+                    //case "FastGame":
+                    //    {
+                    //        clientWaitFastGame.Enqueue(client);
+                    //        client.Send(new Packet()
+                    //            .Add(Property.Type, PacketType.Response)
+                    //            .Add(Property.TargetModule, Name)
+                    //            .Add(Property.Method, "FastGame")
+                    //            .Add(Property.Data, true));
+                    //        break;
+                    //    }
+
                     case "create":
                         {
                             room = new Room(packet.Get<string>(Property.Data), client);
@@ -149,7 +161,7 @@ namespace ServerLib.ServerModules
 
                     default:
                         client.Send(new Packet().Add(Property.Type, PacketType.Response)
-                            .Add(Property.TargetModule, Name)                                    
+                            .Add(Property.TargetModule, Name)
                             .Add(Property.Method, packet.Get<string>(Property.Method))
                             .Add(Property.Error, $"Error: В модуле {Name} нет имеет метода {packet.Get<string>(Property.Method)}!"));
 
@@ -172,25 +184,44 @@ namespace ServerLib.ServerModules
             networkModule.OnClientDisconnected += NetworkModule_onClientDisconnected;
 
             gamesModule = ModuleManager.GetModule<GamesModule>();
-            lock (lockRoom)
-            {
-                rooms = new List<Room>();
-            }
+            rooms = new List<Room>();
+            //clientWaitFastGame = new Queue<Client>();
 
             Console.WriteLine($"[{Name}] Инициализация завершена");
         }
         public void Update()
         {
+            Room room;
             lock (lockRoom)
             {
-                var room = rooms.FirstOrDefault(r => r.GameId != null && gamesModule.GetGame((int)r.GameId).GetState().Status == GameCore.Enums.GameStatus.EndGame);
+                room = rooms.FirstOrDefault(r => r.GameId != null && gamesModule.GetGame((int)r.GameId).GetState().Status == GameCore.Enums.GameStatus.EndGame);
                 if (room?.Id > -1)
                 {
                     gamesModule.DeleteGame(room.Id);
                     rooms.Remove(room);
                 }
+                //if (clientWaitFastGame.Count > 3)
+                //{
+                //    room = new Room("Fast game");
+
+                //    var clients = new List<Client>() {
+                //        clientWaitFastGame.Dequeue(),
+                //        clientWaitFastGame.Dequeue(),
+                //        clientWaitFastGame.Dequeue(),
+                //        clientWaitFastGame.Dequeue()
+                //    };
+
+                //    room.Clients.AddRange(clients);
+
+                //    rooms.Add(room);
+                //    room.GameId = gamesModule.GetIdNewGame(room.Id, room.Clients);
+
+                //    Console.WriteLine($"[{Name}] Создана быстрая игра: {room.Id} - {room.Name}");
+                //}
             }
+            
         }
+
         public void Shutdown()
         {
 

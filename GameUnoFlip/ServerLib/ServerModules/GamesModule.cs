@@ -21,6 +21,7 @@ namespace ServerLib.ServerModules
         {
             Name = name;
         }
+
         public void Initialize()
         {
             Console.WriteLine($"[{Name}] Инициализация...");
@@ -32,15 +33,16 @@ namespace ServerLib.ServerModules
             DBM = ModuleManager.GetModule<DBModule>();
             Console.WriteLine($"[{Name}] Инициализация завершена");
         }
+
         public void Update()
         {
 
         }
+
         public void Shutdown()
         {
 
         }
-
 
         public int GetIdNewGame(int id, List<Client> clients)
         {
@@ -124,11 +126,14 @@ namespace ServerLib.ServerModules
                         {
                             var tempCard = packet.Get<Card>(Property.Data);
                             p = players.FirstOrDefault((p) => p.Id == client.ConnectedID);
-
+                            
                             if (p.Game.Move(p.Id, tempCard))
                             {
-                                Console.WriteLine("Клиент " + p.Id + " сделал ход " + tempCard.Id);
+                                Console.WriteLine($"[GameModule] Клиент {p.Id} сделал ход {tempCard.Id}");
                             }
+                            roomsModule.GetClientsById(p.Game.Id, p.Id).Send(new Packet().Add(Property.Type, PacketType.Request)
+                                .Add(Property.TargetModule, Name)
+                                .Add(Property.Method, "move"));
 
                             break;
                         }
@@ -145,6 +150,11 @@ namespace ServerLib.ServerModules
                                     p.Game.ActionEndMove();
                                 }
                             }
+
+                            Console.WriteLine($"[GameModule] Клиент {p.Id} запросил карту {p.Cards.LastOrDefault().Id}");
+                            roomsModule.GetClientsById(p.Game.Id, p.Id).Send(new Packet().Add(Property.Type, PacketType.Request)
+                                .Add(Property.TargetModule, Name)
+                                .Add(Property.Method, "move"));
                             break;
                         }
                 }
@@ -157,10 +167,11 @@ namespace ServerLib.ServerModules
                         .Add(Property.Data, player.Game.GetState());
 
                     if (players.Contains(player))
-                        await roomsModule.GetClientsById(player.Game.Id, player.Id).SendAsync(pkg);
+                        roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
                 }
             }
         }
+
         private void Player_OnAddCard(Player player, Card card)
         {
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
@@ -198,5 +209,4 @@ namespace ServerLib.ServerModules
             roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
         }
     }
-
 }

@@ -43,14 +43,13 @@ public class AuthView : MonoBehaviour
         if (packet.Get<string>(Property.TargetModule) != "AuthorizationModule") return;
 
         if (packet.Get<AuthMethods>(Property.Method) == AuthMethods.login_Ok
-            && packet.Get<AuthMethods>(Property.Method) == AuthMethods.register_Ok)
+            || packet.Get<AuthMethods>(Property.Method) == AuthMethods.register_Ok)
         {
             Auth auth = packet.Get<Auth>(Property.Data);
 
             PlayerPrefs.SetString("Login", auth.Login);
             PlayerPrefs.SetString("Tokken", auth.Tokken);
             PlayerPrefs.Save();
-            menuManager.MainMenu();
         }
 
     }

@@ -6,6 +6,7 @@
         Request,
         Response,
         Connect,
-        Disconnect
+        Disconnect,
+        Ping
     }
 }

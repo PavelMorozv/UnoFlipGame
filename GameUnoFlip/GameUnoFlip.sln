@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleServer", "ConsoleSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerLib", "ServerLib\ServerLib.csproj", "{150CFA33-B1F3-41B2-B1C5-9BBF73E5972B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDB", "TestDB\TestDB.csproj", "{F97314A6-E122-4CFB-B929-C54B8A181B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDB", "TestDB\TestDB.csproj", "{F97314A6-E122-4CFB-B929-C54B8A181B25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTstarter", "TESTstarter\TESTstarter.csproj", "{33E936D0-42F7-464B-AD5C-A373DCBB597B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F97314A6-E122-4CFB-B929-C54B8A181B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E936D0-42F7-464B-AD5C-A373DCBB597B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E936D0-42F7-464B-AD5C-A373DCBB597B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E936D0-42F7-464B-AD5C-A373DCBB597B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E936D0-42F7-464B-AD5C-A373DCBB597B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

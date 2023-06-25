@@ -17,7 +17,8 @@ namespace Network
 
         login_Error,
         logout_Error,
-        register_Error
+        register_Error,
+        FastAuth
     }
 
     [Serializable]

@@ -2,6 +2,7 @@
 using System.Net;
 using Network;
 using GameCore.Classes;
+using System.Collections.Concurrent;
 
 namespace ServerLib.ServerModules
 {
@@ -9,6 +10,8 @@ namespace ServerLib.ServerModules
     {
 
         private List<Client> _clients = new List<Client>();
+        private List<Client> _addClientst = new List<Client>();
+
         private TcpListener _listener;
         private bool isRun = false;
         private Task? serverTask;
@@ -44,7 +47,6 @@ namespace ServerLib.ServerModules
             Console.WriteLine($"[NetworkModule] Запуск инициализации");
             _listener.Start();
             isRun = true;
-
             serverTask = new Task(() =>
             {
                 Console.WriteLine($"[NetworkModule listener] Задача слушателя запущена");
@@ -76,12 +78,12 @@ namespace ServerLib.ServerModules
 
         private void AcceptClients()
         {
-            while (_listener.Pending())
+            int i = 0;
+            while (_listener.Pending() && i < 10)
             {
                 var client = new Client(_listener.AcceptTcpClient());
-                
+
                 _clients.Add(client);
-                Console.WriteLine("[NetworkModule] Клиент {0} подключен", client.RemoteEndPoint());
                 OnClientConnected?.Invoke(client);
             }
         }
@@ -97,7 +99,7 @@ namespace ServerLib.ServerModules
                     {
                         continue;
                     }
-                    else if (pkg.Get<PacketType>(Property.Type) == PacketType.Connect) 
+                    else if (pkg.Get<PacketType>(Property.Type) == PacketType.Connect)
                     {
                         if (pkg.Get<string>(Property.Data) == null)
                         {
@@ -106,9 +108,12 @@ namespace ServerLib.ServerModules
                         }
 
                         client.ConnectedID = authModule.FastAuth(client, pkg.Get<string>(Property.Data));
+                        continue;
                     }
-
-                    OnClientReciveMessage?.Invoke(client, pkg);
+                    else
+                    {
+                        OnClientReciveMessage?.Invoke(client, pkg);
+                    }
                 }
             }
         }

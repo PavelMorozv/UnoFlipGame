@@ -12,9 +12,11 @@ namespace Network
         private readonly int _serverPort = 0;
         private bool _connected;
         private bool _disposed;
-        private readonly object _ClientLock = new object();
-        
-        
+        private readonly object _ClientReadLock = new object();
+        private readonly object _ClientWriteLock = new object();
+
+
+
         public Action<int> onAssignedConnectionId;
         public int ConnectedID { get; set; } = -1;
         public bool Connected
@@ -44,10 +46,7 @@ namespace Network
 
         public EndPoint? RemoteEndPoint()
         {
-            lock (_ClientLock)
-            {
-                return _client?.Client.RemoteEndPoint;
-            }
+            return _client?.Client.RemoteEndPoint;
         }
         public void Connect()
         {
@@ -63,8 +62,6 @@ namespace Network
         }
         public bool Available()
         {
-            lock (_ClientLock)
-            {
                 if (!_connected) return false;
 
                 try
@@ -78,13 +75,12 @@ namespace Network
                 }
 
                 return true;
-            }
         }
         public void Disconnect()
         {
             try
             {
-                lock (_ClientLock)
+                lock (_ClientWriteLock)
                 {
                     if (_client != null)
                     {
@@ -120,35 +116,42 @@ namespace Network
 
         public bool Send(Packet packet)
         {
-            try
+
+            lock (_ClientWriteLock)
             {
-                byte[] packetData = packet.Serialize();
-                NetworkUtils.SendMessage(_client, packetData);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
+                try
+                {
+                    byte[] packetData = packet.Serialize();
+                    NetworkUtils.SendMessage(_client, packetData);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
         }
         public Packet Read()
         {
-            try
+            lock (_ClientReadLock)
             {
-                byte[] packetData = NetworkUtils.ReceiveMessage(_client);
-                Packet packet = Packet.Deserialize(packetData);
-
-                if (packet.Get<string>(Property.Method) == "ConnectionIdAssigned")
+                try
                 {
-                    ConnectedID = packet.Get<int>(Property.Data);
-                    onAssignedConnectionId?.Invoke(ConnectedID);
-                }
+                    byte[] packetData = NetworkUtils.ReceiveMessage(_client);
+                    Packet packet = Packet.Deserialize(packetData);
 
-                return packet;
-            }
-            catch (Exception ex)
-            {
-                return null;
+                    if (packet.Get<string>(Property.Method) == "ConnectionIdAssigned")
+                    {
+                        ConnectedID = packet.Get<int>(Property.Data);
+                        onAssignedConnectionId?.Invoke(ConnectedID);
+                    }
+
+                    return packet;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
         public async Task<bool> SendAsync(Packet packet)

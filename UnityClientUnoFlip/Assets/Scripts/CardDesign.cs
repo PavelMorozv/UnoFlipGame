@@ -7,6 +7,7 @@ public class CardDesign : MonoBehaviour
 {
     private CardMovement cardMovement;
     private MyGameManager gameManager;
+    private Player player;
 
     Sprite spriteLight;
     Sprite spriteDark;
@@ -70,18 +71,20 @@ public class CardDesign : MonoBehaviour
         return "Error";
     }
 
-
     private void Start()
     {
         cardMovement = GetComponent<CardMovement>();
+
+        player = GetComponentInParent<Player>();
 
         image = transform.GetComponentInChildren<Image>();
         texts = transform.GetComponentsInChildren<Text>();
     }
 
+
     private void Update()
     {
-        if (transform.parent.name == "MainDeck" || transform.parent.name == "DeckEnemy")
+        if (transform.parent.name == "MainDeck" || (player != null && !player.isPlayer))
         {
             image.sprite = gameManager.gameState.Side == Side.Light ? spriteDark : spriteLight;
 

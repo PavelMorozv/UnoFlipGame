@@ -60,26 +60,28 @@ namespace ServerLib.ServerModules
 
                 players.AddLast(player);
                 game.AddPlayer(player);
-
-                var pkg = new Packet().Add(Property.Type, PacketType.Request)
-                    .Add(Property.TargetModule, Name)
-                    .Add(Property.Method, "playerState")
-                    .Add(Property.Data, player.GetState());
-
-                clients.ElementAt(game.GetPlayerId(player)).Send(pkg);
             }
 
             games.AddLast(game);
 
-            foreach (var p in game.GetPlayers())
-            {
-                var pkg = new Packet().Add(Property.Type, PacketType.Request)
-                        .Add(Property.TargetModule, Name)
-                        .Add(Property.Method, "GameInit")
-                        .Add(Property.Data, p.Game.GetState());
+            var playersIds = game.GetPlayers().Select(p => p.Id).ToArray();
 
-                clients.FirstOrDefault(c => c.ConnectedID == p.Id).Send(pkg);
-            }
+            clients.ForEach(c =>
+            {
+                c.Send(new Packet()
+                .Add(Property.Type, PacketType.Request)
+                .Add(Property.TargetModule, Name)
+                .Add(Property.Method, "GetPlayersIds")
+                .Add(Property.Data, playersIds)
+                );
+
+                c.Send(new Packet()
+                .Add(Property.Type, PacketType.Request)
+                .Add(Property.TargetModule, Name)
+                .Add(Property.Method, "GameInit")
+                .Add(Property.Data, players.FirstOrDefault(p => p.Id == c.ConnectedID).Game.GetState)
+                );
+            });
 
             game.Start();
 
@@ -126,12 +128,14 @@ namespace ServerLib.ServerModules
                         {
                             var tempCard = packet.Get<Card>(Property.Data);
                             p = players.FirstOrDefault((p) => p.Id == client.ConnectedID);
-                            
+
                             if (p.Game.Move(p.Id, tempCard))
                             {
                                 Console.WriteLine($"[GameModule] Клиент {p.Id} сделал ход {tempCard.Id}");
                             }
-                            roomsModule.GetClientsById(p.Game.Id, p.Id).Send(new Packet().Add(Property.Type, PacketType.Request)
+                            roomsModule.GetClientsById(p.Game.Id, p.Id).Send(
+                                new Packet()
+                                .Add(Property.Type, PacketType.Request)
                                 .Add(Property.TargetModule, Name)
                                 .Add(Property.Method, "move"));
 
@@ -174,39 +178,68 @@ namespace ServerLib.ServerModules
 
         private void Player_OnAddCard(Player player, Card card)
         {
+            var ps = new PlayerState();
+            ps.Id = player.Id;
+            ps.Cards = new List<Card>() { card };
+
+
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
                 .Add(Property.TargetModule, Name)
                 .Add(Property.Method, "AddCard")
-                .Add(Property.Data, card);
+                .Add(Property.Data, ps);
 
-            roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+            player.Game.GetPlayers().ForEach(p =>
+            {
+                roomsModule.GetClientsById(player.Game.Id, p.Id).Send(pkg);
+            });
         }
+
         private void Player_OnAddRangeCard(Player player, List<Card> cards)
         {
+            var ps = new PlayerState();
+            ps.Id = player.Id;
+            ps.Cards = new List<Card>(cards);
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
                 .Add(Property.TargetModule, Name)
                 .Add(Property.Method, "AddCards")
-                .Add(Property.Data, cards);
+                .Add(Property.Data, ps);
 
-            roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+            player.Game.GetPlayers().ForEach(p =>
+            {
+                roomsModule.GetClientsById(player.Game.Id, p.Id).Send(pkg);
+            });
         }
+
         private void Player_OnRemoveCard(Player player, Card card)
         {
+            var ps = new PlayerState();
+            ps.Id = player.Id;
+            ps.Cards = new List<Card>() { card };
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
                 .Add(Property.TargetModule, Name)
                 .Add(Property.Method, "RemoveCard")
-                .Add(Property.Data, card);
+                .Add(Property.Data, ps);
 
-            roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+            player.Game.GetPlayers().ForEach(p =>
+            {
+                roomsModule.GetClientsById(player.Game.Id, p.Id).Send(pkg);
+            });
         }
+
         private void Player_OnChangeUno(Player player)
         {
+            var ps = new PlayerState();
+            ps.Id = player.Id;
+            ps.IsUno = player.IsUno;
             var pkg = new Packet().Add(Property.Type, PacketType.Request)
                 .Add(Property.TargetModule, Name)
                 .Add(Property.Method, "ChangeUno")
-                .Add(Property.Data, player.IsUno);
+                .Add(Property.Data, ps);
 
-            roomsModule.GetClientsById(player.Game.Id, player.Id).Send(pkg);
+            player.Game.GetPlayers().ForEach(p =>
+            {
+                roomsModule.GetClientsById(player.Game.Id, p.Id).Send(pkg);
+            });
         }
     }
 }

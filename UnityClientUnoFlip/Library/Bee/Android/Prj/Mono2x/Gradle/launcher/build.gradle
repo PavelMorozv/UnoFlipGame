@@ -5,19 +5,17 @@ dependencies {
     }
 
 android {
-    ndkPath "D:/Program Files/Unity/Hub/Editor/2022.3.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
-
-    compileSdkVersion 32
-    buildToolsVersion '32.0.0'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
         minSdkVersion 26
-        targetSdkVersion 32
+        targetSdkVersion 30
         applicationId 'com.ru.pavelmorozov.uno.UnoFlip'
         ndk {
             abiFilters 'armeabi-v7a'
@@ -28,7 +26,7 @@ android {
 
     aaptOptions {
         noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] + unityStreamingAssets.tokenize(', ')
-        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }
 
     lintOptions {

@@ -58,7 +58,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (transform.parent.name == "MainDeck" && gameManager.gameState.CurrentPlayer == gameManager.player.Id)
+        if (transform.parent.name == "MainDeck" && gameManager.gameState.CurrentPlayer == gameManager.auth.Id)
         {
             if (gameManager.player.IsGive) return;
 
@@ -69,19 +69,6 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             gameManager.client.Send(packet);
 
             Debug.Log(packet);
-
-
-            ////var gamePaket = new GamePacket()
-            ////{
-            ////    Type = GamePacketTypes.Player_GiveCard,
-            ////    Data = new byte[0] { }
-            ////};
-            ////var packet = new Packet()
-            ////{
-            ////    Type = PacketTypes.Game_Receive,
-            ////    Data = Converter.GetBytes(gamePaket)
-            ////};
-            ////gameManager.client.Write(packet);
         }
     }
 

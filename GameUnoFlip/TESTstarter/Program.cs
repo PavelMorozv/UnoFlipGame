@@ -34,7 +34,7 @@ namespace TESTstarter
                 tasks.Add(task);
             }
 
-            Thread.Sleep(3000);
+            Thread.Sleep(8000);
 
             for (int i = a; i < b; i++)
             {

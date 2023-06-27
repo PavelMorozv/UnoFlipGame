@@ -10,20 +10,19 @@ using UnityEngine.UI;
 
 public class MyGameManager : MonoBehaviour
 {
-    public GameObject deckPlayer;
-    public GameObject deckEnemy;
+    public GameObject cardPrefab;
     public GameObject deckDrop;
     public GameObject deckMain;
-    public GameObject card;
+    public GameObject playersManagerObject;
 
     public GameObject Win;
     public GameObject Lost;
     public GameObject devInfo;
     private Text info;
 
-    public Client client;
-    public PlayerState player, enemy;
 
+    public PlayersManager Manager;
+    public Client client;
     public Auth auth = new Auth()
     {
         Id = -1,
@@ -31,7 +30,7 @@ public class MyGameManager : MonoBehaviour
         Password = "Password",
         Tokken = ""
     };
-
+    public PlayerState player, enemy;
     public GameState gameState = new GameState()
     {
         CurrentPlayer = -1
@@ -46,10 +45,12 @@ public class MyGameManager : MonoBehaviour
         player = enemy = new PlayerState() { Id = -1, IsGive = false, IsUno = false, Cards = new List<Card>() };
 
         client = new Client("109.195.67.94", 9999);
-        
+
         client.Send(new Packet().Add(Property.Type, PacketType.Connect)
-            .Add(Property.Data, (PlayerPrefs.HasKey("Tokken") ?PlayerPrefs.GetString("Tokken") : "")));
+            .Add(Property.Data, (PlayerPrefs.HasKey("Tokken") ? PlayerPrefs.GetString("Tokken") : "")));
         info = devInfo.GetComponent<Text>();
+
+        Manager = playersManagerObject.GetComponent<PlayersManager>();
     }
 
     void Update()
@@ -61,10 +62,10 @@ public class MyGameManager : MonoBehaviour
             OnReceive?.Invoke(pkg);
         }
 
-        if (gameState.CurrentPlayer == player.Id && client.Connected)
-        {
-            CheckMove();
-        }
+        //if (gameState.CurrentPlayer == player.Id && client.Connected)
+        //{
+        //    CheckMove();
+        //}
 
         infoUpdate();
     }
@@ -76,61 +77,77 @@ public class MyGameManager : MonoBehaviour
         PlayerState ps;
         switch (packet.Get<string>(Property.Method))
         {
-            case "GameInit":
-                gameState = packet.Get<GameState>(Property.Data);
-                break;
+            #region Game Methods
 
-            case "GameState":
-
-                gameState = packet.Get<GameState>(Property.Data);
-                DrawPlayerCards();
-                DrawDropOrMain();
-                if (gameState.Status == GameStatus.EndGame)
+            case "GetPlayersIds":
                 {
-                    if (gameState.CurrentPlayer == player.Id)
-                    {
-                        obj = Instantiate(Win, GameObject.Find("UICanvas").transform, false);
-                    }
-                    else
-                    {
-                        obj = Instantiate(Lost, GameObject.Find("UICanvas").transform, false);
-                    }
-                    Destroy(obj, 3f);
-                    GameObject.Find("MenuController").GetComponent<MenuManager>().MainMenu();
-
+                    var ids = packet.Get<int[]>(Property.Data);
+                    Manager.Initialized(auth.Id, ids);
                 }
                 break;
 
+            case "GameInit":
+                gameState = packet.Get<GameState>(Property.Data);
+                DrawDropOrMain();
+                break;
+
+            case "GameState":
+                {
+                    gameState = packet.Get<GameState>(Property.Data);
+                    DrawDropOrMain();
+                    Manager.ResetAvailableCards();
+                    if (gameState.Status == GameStatus.EndGame)
+                    {
+                        if (gameState.CurrentPlayer == auth.Id)
+                        {
+                            obj = Instantiate(Win, GameObject.Find("UICanvas").transform, false);
+                        }
+                        else
+                        {
+                            obj = Instantiate(Lost, GameObject.Find("UICanvas").transform, false);
+                        }
+                        Destroy(obj, 3f);
+                        GameObject.Find("MenuController").GetComponent<MenuManager>().MainMenu();
+                    }
+
+                    if (gameState.CurrentPlayer == auth.Id)
+                    {
+                        Manager.AvailableCards();
+                    }
+                }
+                break;
+
+            #endregion
+
+
             case "AddCard":
-                var card = packet.Get<Card>(Property.Data);
-                player.Cards.Add(card);
+                ps = packet.Get<PlayerState>(Property.Data);
+                Manager.AddCardToPlayer(ps.Id, ps.Cards[0]);
                 break;
 
             case "ChangeUno":
                 break;
 
             case "AddCards":
-                var cards = packet.Get<List<Card>>(Property.Data);
-                player.Cards.AddRange(cards);
+                ps = packet.Get<PlayerState>(Property.Data);
+                Manager.AddCardsToPlayer(ps.Id, ps.Cards);
                 break;
 
             case "RemoveCard":
-                var rescard = packet.Get<Card>(Property.Data);
-                var removeCard = player.Cards.First(c => c.Id == rescard.Id);
-                player.Cards.Remove(removeCard);
+                ps = packet.Get<PlayerState>(Property.Data);
+                if (ps.Id == auth.Id) break;
+                else Manager.RemoveCardFromPlayer(ps.Id, ps.Cards[0]);
                 break;
 
             case "playerState":
                 ps = packet.Get<PlayerState>(Property.Data);
                 player = ps;
                 break;
+
             case "join":
             case "create":
                 if (packet.Get<bool>(Property.Data)) GameObject.Find("MenuController").GetComponent<MenuManager>().GmaePole();
                 break;
-
-
-
 
             case "FastAuth":
 
@@ -162,16 +179,6 @@ public class MyGameManager : MonoBehaviour
         }
     }
 
-    public void DrawPlayerCards()
-    {
-        deckPlayer.GetComponentsInChildren<CardDesign>().ToList().ForEach(c => Destroy(c.gameObject));
-
-        foreach (var card in player.Cards)
-        {
-            AddCard(deckPlayer, card);
-        }
-    }
-
     public void DrawDropOrMain()
     {
         var delcard = new List<CardDesign>();
@@ -187,24 +194,9 @@ public class MyGameManager : MonoBehaviour
 
     private void AddCard(GameObject target, Card gameCard)
     {
-        var tempObject = Instantiate(card, target.transform, false);
+        var tempObject = Instantiate(cardPrefab, target.transform, false);
         var tempDesign = tempObject.GetComponent<CardDesign>();
         tempDesign.Initialized(this, gameCard);
-    }
-
-    public void CheckMove()
-    {
-        foreach (var cardDesign in deckPlayer.GetComponentsInChildren<CardDesign>())
-        {
-            if (Game.IsMovePosible(gameState.LastCardPlayed, cardDesign.Info, gameState.Side))
-            {
-                cardDesign.gameObject.GetComponent<CardMovement>().isMove = true;
-            }
-            else
-            {
-                cardDesign.gameObject.GetComponent<CardMovement>().isMove = false;
-            }
-        }
     }
 
     private void infoUpdate()
@@ -214,7 +206,7 @@ public class MyGameManager : MonoBehaviour
         if (client?.ConnectedID != -1) info.text += client.ConnectedID + "\n";
 
         info.text += $"AUTH DATA {{ ID: {auth.Id}, Login: {auth.Login}, Tokken: {auth.Tokken} }}\n";
-        
+
         info.text += gameState + "\n";
 
         info.text += player + "\n";

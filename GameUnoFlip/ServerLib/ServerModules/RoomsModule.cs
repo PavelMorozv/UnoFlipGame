@@ -1,4 +1,6 @@
-﻿using Network;
+﻿using GameCore.Enums;
+using GameCore.Structs;
+using Network;
 
 namespace ServerLib.ServerModules
 {
@@ -58,7 +60,7 @@ namespace ServerLib.ServerModules
                             if (rooms.Any((x) => x.Id == packet.Get<int>(Property.Data)))
                             {
                                 room = rooms.Where((x) => x.Id == packet.Get<int>(Property.Data)).FirstOrDefault();
-                                if (room.Clients.Count != 2)
+                                if (room.Clients.Count != 3)
                                 {
                                     room.Clients.Add(client);
                                     client.Send(new Packet()
@@ -68,7 +70,7 @@ namespace ServerLib.ServerModules
                                         .Add(Property.Data, true));
 
                                     Console.WriteLine($"[{Name}] Клиент {client.ConnectedID} присоеденился к комнате: {room.Name}");
-                                    if (room.Clients.Count == 2)
+                                    if (room.Clients.Count == 3)
                                     {
                                         room.GameId = gamesModule.GetIdNewGame(room.Id, room.Clients);
                                     }
@@ -194,30 +196,12 @@ namespace ServerLib.ServerModules
             Room room;
             lock (lockRoom)
             {
-                room = rooms.FirstOrDefault(r => r.GameId != null && gamesModule.GetGame((int)r.GameId).GetState().Status == GameCore.Enums.GameStatus.EndGame);
+                room = rooms.FirstOrDefault(r => r.GameId != null && (gamesModule.GetGame((int)r.GameId).GetState().Status == GameStatus.EndGame || gamesModule.GetGame((int)r.GameId).GetState().Status == GameStatus.InProcess && r.Clients.Any(c=>!c.Connected)));
                 if (room?.Id > -1)
                 {
                     gamesModule.DeleteGame(room.Id);
                     rooms.Remove(room);
                 }
-                //if (clientWaitFastGame.Count > 3)
-                //{
-                //    room = new Room("Fast game");
-
-                //    var clients = new List<Client>() {
-                //        clientWaitFastGame.Dequeue(),
-                //        clientWaitFastGame.Dequeue(),
-                //        clientWaitFastGame.Dequeue(),
-                //        clientWaitFastGame.Dequeue()
-                //    };
-
-                //    room.Clients.AddRange(clients);
-
-                //    rooms.Add(room);
-                //    room.GameId = gamesModule.GetIdNewGame(room.Id, room.Clients);
-
-                //    Console.WriteLine($"[{Name}] Создана быстрая игра: {room.Id} - {room.Name}");
-                //}
             }
             
         }

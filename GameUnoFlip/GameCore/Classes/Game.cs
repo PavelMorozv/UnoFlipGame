@@ -101,7 +101,8 @@ namespace GameCore.Classes
                 case Action.Give:
                 case Action.WildGive:
                     ActionGive(card.Value(_currentSide));
-                    ActionEndMove();
+                    if (!CheckWin(player))
+                        ActionEndMove();
                     break;
 
                 case Action.Flip:
@@ -129,16 +130,22 @@ namespace GameCore.Classes
 
             player.RemoveCard(card);
 
+            if (!CheckWin(player))
+                ActionEndMove();
+
+            return true;
+        }
+        private bool CheckWin(Player player)
+        {
             if (player.Cards.Count == 0)
             {
                 _gameStatus = GameStatus.EndGame;
+                return true;
             }
             else
             {
-                ActionEndMove();
+                return false;
             }
-
-            return true;
         }
 
         public List<Player> GetPlayers()
@@ -174,7 +181,6 @@ namespace GameCore.Classes
             return new GameState()
             {
                 Status = _gameStatus,
-                //CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 CurrentPlayer = _currentPlayer > -1 ? _players.ElementAt(_currentPlayer).Id : _currentPlayer,
                 Direction = _direction,
                 LastCardPlayed = LastCardPlayed(),

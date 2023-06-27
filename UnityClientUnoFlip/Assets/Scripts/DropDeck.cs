@@ -18,7 +18,7 @@ public class DropDeck : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (gm.gameState.CurrentPlayer != gm.player.Id) return;
+        if (gm.gameState.CurrentPlayer != gm.auth.Id) return;
 
         CardMovement cardMovement = eventData.pointerDrag.GetComponent<CardMovement>();
         if (!cardMovement.isMove) return;
@@ -74,18 +74,5 @@ public class DropDeck : MonoBehaviour, IDropHandler
         gm.client.Send(packet);
 
         Debug.Log(packet);
-
-
-        //var gamePaket = new GamePacket()
-        //{
-        //    Type = GamePacketTypes.Game_Move,
-        //    Data = Converter.GetBytes(card)
-        //};
-        //var packet = new Packet()
-        //{
-        //    Type = PacketTypes.Game_Receive,
-        //    Data = Converter.GetBytes(gamePaket)
-        //};
-        //gm.client.Write(packet);
     }
 }

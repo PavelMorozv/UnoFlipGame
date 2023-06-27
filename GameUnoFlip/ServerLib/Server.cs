@@ -48,7 +48,7 @@ namespace ServerLib
 
                     // Дополнительный код для сервера
 
-                    Thread.Sleep(4000);
+                    Thread.Sleep(500);
                 }
 
                 // Выгружаем модули
